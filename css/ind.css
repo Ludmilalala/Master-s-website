@@ -59,9 +59,10 @@
 
 /* Делаем первый абзац немного выделенным */
 .cat-story p:first-of-type {
-    font-size: 1.1em;
-    line-height: 1.8;
+    font-size: 1.05em; /* Такой же размер как у остальных */
+    line-height: 1.7; /* Такой же межстрочный интервал */
 }
+
 
 /* Стили для музыкального текста */
 .music-text-content p {
@@ -885,8 +886,12 @@
     border-bottom: 1px solid #434190;
 }
 
-/* Мобильная адаптация для индивидуального раздела */
-@media (max-width: 1024px) {
+/* Адаптация для планшетов 992px - 1200px */
+@media (max-width: 1200px) {
+    .hobby-section {
+        padding: 25px;
+    }
+    
     .section-content {
         gap: 30px;
     }
@@ -895,8 +900,57 @@
         width: 240px;
         height: 240px;
     }
+    
+    .text-content p {
+        font-size: 1em;
+    }
 }
 
+/* Адаптация для больших телефонов 768px - 992px */
+@media (max-width: 992px) {
+    .main-content h1 {
+        font-size: 2em;
+        margin-bottom: 35px;
+    }
+    
+    .hobby-section {
+        padding: 22px;
+        margin-bottom: 35px;
+    }
+    
+    .section-header {
+        gap: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6em;
+    }
+    
+    .section-content {
+        gap: 25px;
+    }
+    
+    .hobby-image {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .text-content p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+    
+    .cat-story p {
+        font-size: 1.05em;
+        line-height: 1.7;
+    }
+    
+    .music-text-content p {
+        font-size: 1em;
+    }
+}
+
+/* Адаптация для средних телефонов 600px - 768px */
 @media (max-width: 768px) {
     .main-content h1 {
         font-size: 1.8em;
@@ -909,13 +963,13 @@
     }
     
     .section-header {
-        flex-direction: column;
+        flex-direction: row;
         gap: 15px;
-        text-align: center;
+        text-align: left;
     }
     
     .section-header i {
-        margin-right: 0;
+        margin-right: 15px;
         font-size: 1.8em;
     }
     
@@ -923,43 +977,55 @@
         font-size: 1.5em;
     }
     
+    /* Сохраняем обтекание на планшетах */
     .section-content {
-        flex-direction: column;
+        flex-direction: row;
         gap: 25px;
+        align-items: flex-start;
     }
     
     .image-content {
-        float: none;
-        margin: 0 auto 20px auto;
-        text-align: center;
+        float: left;
+        margin: 0 20px 15px 0;
+        shape-outside: margin-box;
     }
     
     .hobby-image {
-        width: 200px;
-        height: 200px;
-        transform: none;
+        width: 180px;
+        height: 180px;
+        transform: rotate(-2deg);
     }
     
     .hobby-image:hover {
-        transform: scale(1.02);
+        transform: rotate(-2deg) scale(1.02);
     }
     
     .text-content p {
-        font-size: 1em;
+        font-size: 0.95em;
         line-height: 1.6;
+        text-align: justify;
     }
     
     .cat-story p {
-        font-size: 1em;
+        font-size: 1em; /* Одинаковый размер для всех */
+        line-height: 1.6; /* Одинаковый интервал для всех */
+        margin-bottom: 16px; /* Одинаковый отступ для всех */
     }
-    
+
+    .cat-story p:first-of-type {
+        font-size: 1em; /* Такой же как у остальных */
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
     .cat-conclusion {
         padding: 15px;
         font-size: 1em;
+        clear: both;
     }
     
     .music-text-content p {
-        font-size: 1em;
+        font-size: 0.95em;
     }
     
     .music-playlist {
@@ -985,15 +1051,103 @@
     }
 }
 
-@media (max-width: 480px) {
+/* Адаптация для маленьких телефонов 480px - 600px */
+@media (max-width: 600px) {
     .main-content h1 {
-        font-size: 1.5em;
+        font-size: 1.6em;
         margin-bottom: 25px;
     }
     
     .hobby-section {
-        padding: 15px;
+        padding: 18px;
         margin-bottom: 25px;
+    }
+    
+    .section-header {
+        flex-direction: row;
+        gap: 10px;
+        text-align: left;
+    }
+    
+    .section-header i {
+        margin-right: 12px;
+        font-size: 1.6em;
+    }
+    
+    .section-header h2 {
+        font-size: 1.4em;
+    }
+    
+    /* Сохраняем обтекание на маленьких телефонах */
+    .section-content {
+        flex-direction: row;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .image-content {
+        float: left;
+        margin: 0 15px 12px 0;
+        shape-outside: margin-box;
+    }
+    
+    .hobby-image {
+        width: 150px;
+        height: 150px;
+        transform: rotate(-2deg);
+    }
+    
+    .text-content p {
+        font-size: 0.9em;
+        line-height: 1.5;
+        text-align: justify;
+    }
+    
+    .cat-story p {
+        font-size: 0.95em; /* Одинаковый размер для всех */
+        line-height: 1.5; /* Одинаковый интервал для всех */
+        margin-bottom: 14px; /* Одинаковый отступ для всех */
+    }
+    
+    .cat-story p:first-of-type {
+        font-size: 0.95em; /* Такой же как у остальных */
+        line-height: 1.5;
+        margin-bottom: 14px;
+    }
+    
+    .music-text-content p {
+        font-size: 0.9em;
+    }
+    
+    #vk_playlist_korn,
+    #vk_playlist_mzlff {
+        min-height: 320px !important;
+    }
+    
+    .sources-section {
+        padding: 18px;
+    }
+    
+    .sources-list li {
+        padding-left: 25px;
+        font-size: 0.9em;
+    }
+    
+    .cat_container {
+        transform: scale(0.12);
+    }
+}
+
+/* Адаптация для очень маленьких телефонов до 480px */
+@media (max-width: 480px) {
+    .main-content h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    
+    .hobby-section {
+        padding: 15px;
+        margin-bottom: 20px;
     }
     
     .section-header h2 {
@@ -1004,21 +1158,54 @@
         font-size: 1.5em;
     }
     
+    /* На очень маленьких экранах убираем обтекание */
+    .section-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .image-content {
+        float: none;
+        margin: 0 auto 15px auto;
+        text-align: center;
+    }
+    
     .hobby-image {
         width: 160px;
         height: 160px;
+        transform: none;
+    }
+    
+    .hobby-image:hover {
+        transform: scale(1.02);
     }
     
     .text-content p {
-        font-size: 0.95em;
+        font-size: 0.85em;
+        line-height: 1.5;
+        text-align: left;
     }
     
     .cat-story p {
-        font-size: 0.95em;
+        font-size: 0.9em; /* Одинаковый размер для всех */
+        line-height: 1.5; /* Одинаковый интервал для всех */
+        margin-bottom: 12px; /* Одинаковый отступ для всех */
+    }
+    
+    .cat-story p:first-of-type {
+        font-size: 0.9em; /* Такой же как у остальных */
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .cat-conclusion {
+        padding: 12px;
+        font-size: 0.9em;
+        clear: none;
     }
     
     .music-text-content p {
-        font-size: 0.95em;
+        font-size: 0.85em;
     }
     
     #vk_playlist_korn,
@@ -1032,11 +1219,11 @@
     
     .sources-list li {
         padding-left: 20px;
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
     
     .cat_container {
-        transform: scale(0.12);
+        transform: scale(0.1);
     }
 }
 
@@ -1054,5 +1241,51 @@
     #vk_playlist_korn,
     #vk_playlist_mzlff {
         min-height: 280px !important;
+    }
+    
+    .text-content p {
+        font-size: 0.8em;
+    }
+    
+    .cat-story p {
+        font-size: 0.85em; /* Одинаковый размер для всех */
+        line-height: 1.4; /* Одинаковый интервал для всех */
+        margin-bottom: 10px; /* Одинаковый отступ для всех */
+    }
+    
+    .cat-story p:first-of-type {
+        font-size: 0.85em; /* Такой же как у остальных */
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .music-text-content p {
+        font-size: 0.8em;
+    }
+}
+
+/* Улучшение читаемости на маленьких экранах */
+@media (max-width: 480px) {
+    .text-content p,
+    .cat-story p,
+    .music-text-content p {
+        text-align: justify;
+        hyphens: auto;
+    }
+}
+
+/* Гарантия правильного обтекания на устройствах где оно поддерживается */
+@media (min-width: 481px) and (max-width: 768px) {
+    .cat-story {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .image-content {
+        shape-outside: margin-box;
+    }
+    
+    .cat-story p {
+        text-align: justify;
     }
 }
