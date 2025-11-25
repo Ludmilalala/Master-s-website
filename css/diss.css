@@ -1,0 +1,381 @@
+.dissertation-content {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    color: #000000;
+    max-width: 100%; 
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+}
+/* Убираем ограничение ширины для основного контента */
+.main-content.dissertation-content {
+    max-width: none; /* Убираем ограничение */
+    width: 100%;
+    padding: 30px; /* Сохраняем отступы как в основном контенте */
+}
+
+.dissertation-content h2 {
+    color: #000000;
+    font-weight: 700;
+    margin: 30px 0 15px 0;
+    font-size: 14px;
+    text-align: left;
+    text-transform: none;
+    border-bottom: none;
+    padding-bottom: 0;
+    text-indent: 1.5em;
+}
+
+.dissertation-content h3 {
+    color: #000000;
+    font-weight: 700;
+    margin: 20px 0 12px 0;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 1.5em;
+}
+
+.dissertation-content h4 {
+    color: #000000;
+    margin: 18px 0 10px 0;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 1.5em;
+    font-weight: 700;
+}
+
+.dissertation-content p {
+    margin: 0 0 12px 0;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+    text-indent: 1.5em;
+    color: #000000;
+}
+
+.dissertation-content ul, 
+.dissertation-content ol {
+    margin: 12px 0;
+    padding-left: 40px;
+    text-align: justify;
+}
+
+.dissertation-content li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.abstract-section {
+    background: #f8f9fa;
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.abstract-section h2 {
+    color: #000000;
+    border-bottom: none;
+    margin: 0 0 15px 0;
+    text-indent: 0;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.abstract-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-indent: 1.5em;
+    text-align: justify;
+    font-style: italic;
+    margin: 0 0 12px 0;
+}
+
+.content-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content-section h2 {
+    color: #000000;
+    border-bottom: none;
+    margin: 0 0 15px 0;
+    text-indent: 0;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Стили для содержания в стиле статьи */
+.toc-container {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.toc-item {
+    margin-bottom: 12px;
+    padding-left: 12px;
+    /* transition: all 0.3s ease; */
+}
+
+/* .toc-item:hover {
+    transform: translateX(3px);
+} */
+
+.toc-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    padding: 6px 0;
+    /* transition: color 0.3s ease; */
+}
+
+.toc-link:hover {
+    color: #333;
+}
+
+.toc-subitems {
+    margin-top: 6px;
+    padding-left: 15px;
+    border-left: 1px solid #ccc;
+}
+
+.toc-sublink {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    display: block;
+    padding: 4px 0;
+    /* transition: all 0.3s ease; */
+    border-bottom: 1px solid transparent;
+}
+
+/* .toc-sublink:hover {
+    color: #000;
+    transform: translateX(2px);
+} */
+
+.main-content-section section {
+    margin: 0 0 20px 0;
+    background: transparent;
+    padding: 0;
+}
+
+.references-list {
+    list-style-type: decimal;
+    padding-left: 40px;
+    column-count: 1;
+    text-align: justify;
+}
+
+.references-list li {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.4;
+    break-inside: avoid;
+    text-indent: 0;
+}
+
+/* Стили для улучшения читаемости */
+.dissertation-content strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.dissertation-content em {
+    color: #000000;
+    font-style: italic;
+}
+
+/* Убираем плавную прокрутку для стиля статьи */
+html {
+    scroll-behavior: auto;
+}
+
+/* Убираем анимации для стиля статьи */
+.dissertation-content section {
+    animation: none;
+}
+
+/* Стили для математических формул */
+.math-formula {
+    text-align: center;
+    margin: 15px 0;
+    padding: 12px;
+}
+
+.math-formula p {
+    margin: 0;
+    text-indent: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+.math-inline {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Стили для таблиц */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #f8f9fa;
+    color: #000000;
+    font-weight: 700;
+    padding: 10px 8px;
+    text-align: center;
+    border: 1px solid #9e9e9e;
+}
+
+.table td {
+    padding: 8px 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    background: white;
+}
+
+/* Мобильная адаптация для диссертации */
+@media (max-width: 768px) {
+    .dissertation-content {
+        padding: 15px;
+    }
+    
+    .main-content.dissertation-content {
+        padding: 20px 15px;
+    }
+    
+    .dissertation-content h2 {
+        font-size: 13px;
+        text-indent: 1em;
+        margin: 20px 0 12px 0;
+    }
+    
+    .dissertation-content h3, 
+    .dissertation-content h4 {
+        font-size: 13px;
+        text-indent: 1em;
+    }
+    
+    .dissertation-content p {
+        font-size: 13px;
+        text-indent: 1em;
+        line-height: 1.4;
+    }
+    
+    .dissertation-content ul, 
+    .dissertation-content ol {
+        padding-left: 25px;
+    }
+    
+    .dissertation-content li {
+        font-size: 13px;
+    }
+    
+    .abstract-section, 
+    .content-section {
+        padding: 15px;
+    }
+    
+    .toc-container {
+        padding: 15px;
+    }
+    
+    .toc-link {
+        font-size: 13px;
+    }
+    
+    .toc-sublink {
+        font-size: 12px;
+    }
+    
+    .references-list {
+        padding-left: 25px;
+    }
+    
+    .references-list li {
+        font-size: 12px;
+    }
+    
+    .table {
+        font-size: 12px;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 6px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dissertation-content {
+        padding: 10px;
+    }
+    
+    .main-content.dissertation-content {
+        padding: 15px 10px;
+    }
+    
+    .dissertation-content h2,
+    .dissertation-content h3,
+    .dissertation-content h4 {
+        font-size: 12px;
+        text-indent: 0.8em;
+    }
+    
+    .dissertation-content p {
+        font-size: 12px;
+        text-indent: 0.8em;
+    }
+    
+    .dissertation-content ul, 
+    .dissertation-content ol {
+        padding-left: 20px;
+    }
+    
+    .references-list {
+        padding-left: 20px;
+    }
+}
+
+/* Убираем все лишние границы и тени */
+.dissertation-content {
+    box-shadow: none !important;
+}
+
+.main-content-section section {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Первый заголовок без верхнего отступа */
+#introduction h2 {
+    margin-top: 0 !important;
+}
+
+/* Убираем разделительные линии */
+.dissertation-content hr {
+    display: none;
+}

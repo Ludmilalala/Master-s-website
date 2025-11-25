@@ -1,0 +1,944 @@
+/* Основные настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #38375c;
+    background:  #667eea;
+    min-height: 100vh;
+}
+
+/* Контейнер для центрирования контента */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Верхний блок */
+.top-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10001;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%; /* Растягиваем на всю ширину */
+}
+
+.lang-box a{
+	color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    
+}
+
+.lang-box a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.university-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.university-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: center;
+	max-width: 1400px;
+    padding: 0 20px;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.header-text a {
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.header-text a:hover {
+    color: #667eea;
+    border-bottom: 1px solid #667eea;
+}
+
+.header-text h3 a {
+    font-size: 1em;
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+
+.header-text h3 {
+    color: #7f8c8d;
+    font-size: 1em;
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.header-container {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.photo-container {
+    margin-right: 25px;
+    flex-shrink: 0; /* Чтобы фотка не сжималась */
+}
+
+.profile-photo {
+    border-radius: 8px; /* Меньшее скругление углов */
+    border: none; /* Убираем цветную рамку */
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Легкая тень вместо рамки */
+}
+
+.profile-photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.header-text {
+    text-align: left;
+    flex: 1;
+}
+
+.header-text h1 {
+    color: #2c3e50;
+    font-size: 1.8em; /* Уменьшили размер */
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.header-text h2 {
+    color: #667eea;
+    font-size: 1.2em; /* Уменьшили размер */
+    margin: 8px 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.header-text h3 {
+    color: #7f8c8d;
+    font-size: 1em; /* Уменьшили размер */
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+/* Основное содержимое */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Убедимся, что content-wrapper тоже имеет правильную ширину */
+.content-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Горизонтальное меню */
+.main-menu {
+    width: 100%; /* Растягиваем на всю ширину */
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px 20px;
+    margin: 0 0 25px 0; /* Убрали боковые отступы */
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e8e8;
+   
+
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.menu-button {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #5a67d8;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    white-space: nowrap;
+    background: transparent;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    margin: 0 1px;
+}
+
+.menu-button:hover {
+    color: #2d3748;
+    background: #f7fafc;
+    transform: none;
+}
+
+.menu-button.current {
+    color: #fff;
+    background: #667eea;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button.current:hover {
+    background: #2d3748;
+}
+
+/* Гарантированно убираем все полоски и псевдоэлементы */
+.menu-button::before,
+.menu-button::after,
+.menu-button.current::before,
+.menu-button.current::after {
+    display: none !important;
+}
+
+/* Убираем любые границы между кнопками */
+.menu-button:not(:last-child) {
+    border-right: none;
+    margin-right: 0;
+}
+
+/* Основной контент */
+.content-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    width: 100%; /* Растягиваем на всю ширину */
+}
+
+/* Карточка резюме */
+.resume-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.resume-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.resume-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-label {
+    min-width: 250px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+}
+
+.resume-label i {
+    margin-right: 10px;
+    color: #667eea;
+    width: 20px;
+}
+
+.resume-value {
+    flex: 1;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* Нижнее меню */
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    margin-top: 30px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-item {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* transform: translateY(-2px); чтоб кнопки не двигались*/
+}
+
+
+/* Анимации для появления элементов */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+/* Темная тема (опционально) */
+.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    /* добавьте другие переменные для темной темы */
+}
+
+
+
+/* Модальные окна для изображений */
+.modal-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+    transform: scale(1.02);
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Модальное окно для изображений */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: relative;
+    z-index: 10001;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Стили для контейнера с видео "Магистр рассказывает о себе" */
+.video-section {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px 20px;
+    margin: 0 0 25px 0; /* Убрали боковые отступы */
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.video-section h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.video-note {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Стили для анимированной видеокнопки */
+.video-player-container {
+    margin: 30px 0 !important; /* отступы вокруг кнопки */
+    padding: 20px; /* внутренние отступы */
+    background: transparent !important; /* Убрать фон у контейнера, т.к. он уже есть у video-section */
+}
+
+.play-button {
+    width: 152px;
+    height: 152px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.play-backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10000;
+}
+
+.play-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 15px);
+    border: none;
+    outline: none;
+    background: none;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+.play-close::before,
+.play-close::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+    background-color: #fff;
+}
+
+.play-close::after {
+    transform: rotate(-45deg);
+}
+
+.play-circles {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.play-perspective {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: -230px;
+    top: -125px;
+    z-index: 10001;
+}
+
+.play-triangle {
+    width: 600px;
+    height: 400px;
+    background-color: #667eea;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.play-video {
+    width: 100%;
+    height: 100%;
+}
+
+.play-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resume-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85); 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+} 
+
+/* Адаптация для мобильных устройств и планшетов с правильным обтеканием */
+
+/* Планшеты 992px - 1200px */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .header-container {
+        padding: 20px;
+        display: block; /* Меняем flex на block для обтекания */
+        overflow: hidden; /* Для containment */
+    }
+    
+    .photo-container {
+        float: left;
+        margin: 0 25px 15px 0;
+        shape-outside: margin-box;
+    }
+    
+    .profile-photo {
+        max-width: 200px;
+        height: auto;
+    }
+    
+    .header-text {
+        text-align: left;
+    }
+    
+    .main-content {
+        padding: 25px;
+    }
+}
+
+/* Планшеты 768px - 992px */
+@media (max-width: 992px) {
+    .header {
+        margin: 20px 0;
+    }
+    
+    .photo-container {
+        float: left;
+        margin: 0 20px 15px 0;
+    }
+    
+    .profile-photo {
+        max-width: 180px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.6em;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .header-text h2 {
+        font-size: 1.15em;
+        margin: 8px 0;
+    }
+    
+    .header-text h3 {
+        margin: 6px 0;
+        line-height: 1.4;
+    }
+    
+    .resume-label {
+        min-width: 180px;
+    }
+}
+
+/* Большие телефоны 600px - 768px */
+@media (max-width: 768px) {
+    /* Верхний блок */
+    .top-block {
+        padding: 15px 0;
+        flex-wrap: wrap;
+    }
+    
+    .lang-box, .university-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    
+    .lang-box a, .university-links a {
+        margin-left: 0;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    /* Шапка с обтеканием как в примере */
+    .header {
+        margin: 15px 0;
+    }
+    
+    .header-container {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .photo-container {
+        float: left;
+        margin: 0 15px 10px 0;
+        shape-outside: margin-box;
+    }
+    
+    .profile-photo {
+        max-width: 150px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.4em;
+        margin-bottom: 8px;
+    }
+    
+    .header-text h2 {
+        font-size: 1.1em;
+        margin: 6px 0;
+    }
+    
+    .header-text h3 {
+        font-size: 0.95em;
+        margin: 4px 0;
+        line-height: 1.4;
+        text-align: left;
+    }
+    
+    /* Обеспечиваем правильное обтекание текста */
+    .header-text {
+        line-height: 1.5;
+    }
+    
+    /* Горизонтальное меню становится вертикальным */
+    .main-menu {
+        padding: 12px 15px;
+    }
+    
+    .menu-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .menu-button {
+        width: 100%;
+        padding: 14px;
+        margin: 2px 0;
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    /* Основной контент */
+    .content-wrapper {
+        padding: 0 15px 15px 15px;
+    }
+    
+    .main-content {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    /* Карточка резюме */
+    .resume-card {
+        gap: 12px;
+    }
+    
+    .resume-item {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .resume-label {
+        min-width: 100%;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .resume-value {
+        width: 100%;
+    }
+}
+
+/* Средние телефоны 480px - 600px */
+@media (max-width: 600px) {
+    .photo-container {
+        float: left;
+        margin: 0 15px 8px 0;
+    }
+    
+    .profile-photo {
+        max-width: 130px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.3em;
+        margin-bottom: 6px;
+    }
+    
+    .header-text h2 {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+    
+    .header-text h3 {
+        font-size: 0.9em;
+        margin: 3px 0;
+        line-height: 1.3;
+    }
+    
+    /* Улучшаем обтекание для маленьких экранов */
+    .header-text h3 {
+        text-align: justify;
+        hyphens: auto;
+    }
+    
+    /* Верхний блок на двух строках */
+    .top-block {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .lang-box, .university-links {
+        justify-content: center;
+    }
+    
+    .menu-button {
+        padding: 13px;
+        font-size: 14px;
+    }
+}
+
+/* Маленькие телефоны 380px - 480px */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .header {
+        margin: 10px 0;
+    }
+    
+    .header-container {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .photo-container {
+        float: left;
+        margin: 0 12px 6px 0;
+    }
+    
+    .profile-photo {
+        max-width: 110px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+    
+    .header-text h2 {
+        font-size: 0.95em;
+        margin: 4px 0;
+    }
+    
+    .header-text h3 {
+        font-size: 0.85em;
+        margin: 2px 0;
+        line-height: 1.3;
+        text-align: justify;
+    }
+    
+    .main-content {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    .resume-item {
+        padding: 12px;
+    }
+    
+    .menu-button {
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .lang-box a, .university-links a {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+    
+    /* Увеличиваем шрифты для лучшей читаемости */
+    body {
+        font-size: 15px;
+    }
+    
+    .resume-label, .resume-value {
+        font-size: 14px;
+    }
+}
+
+/* Очень маленькие телефоны до 380px */
+@media (max-width: 380px) {
+    .photo-container {
+        float: left;
+        margin: 0 10px 5px 0;
+    }
+    
+    .profile-photo {
+        max-width: 90px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.1em;
+    }
+    
+    .header-text h2 {
+        font-size: 0.9em;
+    }
+    
+    .header-text h3 {
+        font-size: 0.8em;
+        line-height: 1.4;
+    }
+    
+    /* На очень маленьких экранах убираем обтекание */
+    .photo-container {
+        float: none;
+        margin: 0 auto 10px auto;
+        text-align: center;
+    }
+    
+    .profile-photo {
+        display: inline-block;
+    }
+    
+    .header-text {
+        text-align: center;
+    }
+    
+    .header-text h3 {
+        text-align: center;
+    }
+    
+    .menu-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+/* Очистка обтекания */
+.header-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Улучшение обтекания текста вокруг изображения */
+.photo-container {
+    shape-outside: margin-box;
+}
+
+.header-text h3 {
+    text-align: left;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+/* Гарантия что текст правильно обтекает фото */
+.header-text {
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+/* Для очень длинного текста обеспечиваем хорошее обтекание */
+.header-text h3 br {
+    display: inline; /* Сохраняем переносы строк из HTML */
+}
