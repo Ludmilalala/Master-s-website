@@ -1,6 +1,3 @@
-// js/script.js
-// Основные скрипты для сайта
-
 // Инициализация при загрузке документа
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Сайт загружен!');
@@ -103,7 +100,7 @@ function copyEmail() {
     });
 }
 
-// Анимация видеокнопки (из video.js)
+// Анимация видеокнопки 
 document.addEventListener('DOMContentLoaded', function() {
     // Инициализация GSAP анимаций
     if (typeof TweenMax !== 'undefined') {
