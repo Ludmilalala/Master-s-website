@@ -200,6 +200,14 @@ body {
     flex-wrap: wrap;
 }
 
+.main-content h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .menu-button {
     padding: 12px 24px;
     text-decoration: none;
