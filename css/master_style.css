@@ -561,112 +561,227 @@ body {
     transition: transform 0.3s ease;
 } 
 
-/* Адаптация для мобильных устройств и планшетов с правильным обтеканием */
-
-/* Планшеты 992px - 1200px */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    
-    .header-container {
-        padding: 20px;
-        display: block; /* Меняем flex на block для обтекания */
-        overflow: hidden; /* Для containment */
-    }
-    
-    .photo-container {
-        float: left;
-        margin: 0 25px 15px 0;
-        shape-outside: margin-box;
-    }
-    
-    .profile-photo {
-        max-width: 200px;
-        height: auto;
-    }
-    
-    .header-text {
-        text-align: left;
-    }
-    
-    .main-content {
-        padding: 25px;
-    }
-}
-
-/* Планшеты 768px - 992px */
-@media (max-width: 992px) {
-    .header {
-        margin: 20px 0;
-    }
-    
-    .photo-container {
-        float: left;
-        margin: 0 20px 15px 0;
-    }
-    
-    .profile-photo {
-        max-width: 180px;
-    }
-    
-    .header-text h1 {
-        font-size: 1.6em;
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-    
-    .header-text h2 {
-        font-size: 1.15em;
-        margin: 8px 0;
-    }
-    
-    .header-text h3 {
-        margin: 6px 0;
-        line-height: 1.4;
-    }
-    
-    .resume-label {
-        min-width: 180px;
-    }
-}
-
-/* Большие телефоны 600px - 768px */
+/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-    /* Верхний блок */
+    /* Верхний блок - ДонНТУ Портал магистров справа */
     .top-block {
         padding: 15px 0;
-        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
     }
     
     .lang-box, .university-links {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: flex-end;
-        gap: 8px;
     }
     
     .lang-box a, .university-links a {
-        margin-left: 0;
+        margin-left: 10px;
         padding: 6px 12px;
-        font-size: 14px;
+        font-size: 12px;
+        white-space: nowrap;
     }
     
-    /* Шапка с обтеканием как в примере */
+    /* Шапка - убираем обтекание, делаем нормальный блок */
     .header {
         margin: 15px 0;
     }
     
     .header-container {
-        padding: 15px;
-        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     
     .photo-container {
-        float: left;
-        margin: 0 15px 10px 0;
-        shape-outside: margin-box;
+        margin-right: 0;
+        margin-bottom: 20px;
+        float: none;
+    }
+    
+    .profile-photo {
+        max-width: 200px;
+        width: 100%;
+    }
+    
+    .header-text {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .header-text h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .header-text h2 {
+        font-size: 1.2em;
+        margin: 8px 0;
+    }
+    
+    .header-text h3 {
+        font-size: 1em;
+        margin: 6px 0;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    /* Меню - вертикальные блоки одинакового размера */
+    .main-menu {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .menu-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .menu-button {
+        width: 100%;
+        padding: 16px;
+        margin: 0;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #e8e8e8;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-button:hover {
+        background: #f7fafc;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu-button.current {
+        background: #667eea;
+        color: white;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+    
+    /* Видео секция - увеличиваем отступ */
+    .video-section {
+        padding: 25px 20px;
+        margin-bottom: 40px; /* Больше отступ */
+        text-align: center;
+    }
+    
+    .video-section h3 {
+        font-size: 1.4em;
+        margin-bottom: 25px;
+    }
+    
+    .video-note {
+        font-size: 1em;
+        margin-top: 20px;
+    }
+    
+    /* Адаптация видео контейнера */
+    .play-perspective {
+        width: 90vw;
+        height: 50vw;
+        max-width: 400px;
+        max-height: 250px;
+        left: calc(50% - 45vw);
+        top: calc(50% - 25vw);
+    }
+    
+    .play-triangle {
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Основной контент */
+    .content-wrapper {
+        padding: 0 15px 20px 15px;
+    }
+    
+    .main-content {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+    /* Карточка резюме - одинаковые блоки */
+    .resume-card {
+        gap: 15px;
+    }
+    
+    .resume-item {
+        flex-direction: column;
+        padding: 20px;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        min-height: 120px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .resume-label {
+        min-width: 100%;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #667eea;
+        font-size: 1.1em;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .resume-value {
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+        line-height: 1.6;
+    }
+    
+    /* Нижнее меню - горизонтальное */
+    .footer-menu {
+        padding: 20px 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .footer-item {
+        margin: 0 5px;
+        padding: 12px 18px;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        white-space: nowrap;
+    }
+    
+    .footer-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Верхний блок адаптация */
+    .top-block {
+        padding: 12px 0;
+    }
+    
+    .lang-box a, .university-links a {
+        font-size: 11px;
+        padding: 5px 8px;
+        margin-left: 5px;
+    }
+    
+    /* Шапка */
+    .header-container {
+        padding: 15px;
     }
     
     .profile-photo {
@@ -674,114 +789,59 @@ body {
     }
     
     .header-text h1 {
-        font-size: 1.4em;
-        margin-bottom: 8px;
+        font-size: 1.3em;
     }
     
     .header-text h2 {
         font-size: 1.1em;
-        margin: 6px 0;
     }
     
     .header-text h3 {
         font-size: 0.95em;
-        margin: 4px 0;
-        line-height: 1.4;
-        text-align: left;
     }
     
-    /* Обеспечиваем правильное обтекание текста */
-    .header-text {
-        line-height: 1.5;
-    }
-    
-    /* Горизонтальное меню становится вертикальным */
-    .main-menu {
-        padding: 12px 15px;
-    }
-    
-    .menu-container {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
+    /* Меню */
     .menu-button {
-        width: 100%;
         padding: 14px;
-        margin: 2px 0;
-        border-radius: 8px;
-        text-align: center;
+        font-size: 15px;
+    }
+    
+    /* Видео */
+    .video-section {
+        padding: 20px 15px;
+        margin-bottom: 35px;
+    }
+    
+    .video-section h3 {
+        font-size: 1.3em;
     }
     
     /* Основной контент */
-    .content-wrapper {
-        padding: 0 15px 15px 15px;
-    }
-    
     .main-content {
         padding: 20px;
-        border-radius: 12px;
-    }
-    
-    /* Карточка резюме */
-    .resume-card {
-        gap: 12px;
     }
     
     .resume-item {
-        flex-direction: column;
-        padding: 15px;
-        gap: 10px;
+        padding: 18px;
+        min-height: 110px;
     }
     
-    .resume-label {
-        min-width: 100%;
-        padding-bottom: 8px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Нижнее меню */
+    .footer-menu {
+        padding: 15px 10px;
     }
     
-    .resume-value {
-        width: 100%;
+    .footer-item {
+        padding: 10px 14px;
+        font-size: 13px;
     }
 }
 
-/* Средние телефоны 480px - 600px */
-@media (max-width: 600px) {
-    .photo-container {
-        float: left;
-        margin: 0 15px 8px 0;
-    }
-    
-    .profile-photo {
-        max-width: 130px;
-    }
-    
-    .header-text h1 {
-        font-size: 1.3em;
-        margin-bottom: 6px;
-    }
-    
-    .header-text h2 {
-        font-size: 1em;
-        margin: 5px 0;
-    }
-    
-    .header-text h3 {
-        font-size: 0.9em;
-        margin: 3px 0;
-        line-height: 1.3;
-    }
-    
-    /* Улучшаем обтекание для маленьких экранов */
-    .header-text h3 {
-        text-align: justify;
-        hyphens: auto;
-    }
-    
-    /* Верхний блок на двух строках */
+@media (max-width: 360px) {
+    /* Верхний блок - на очень маленьких экранах делаем вертикально */
     .top-block {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
         text-align: center;
     }
     
@@ -789,156 +849,48 @@ body {
         justify-content: center;
     }
     
-    .menu-button {
-        padding: 13px;
-        font-size: 14px;
-    }
-}
-
-/* Маленькие телефоны 380px - 480px */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
+    .lang-box a, .university-links a {
+        margin-left: 0;
+        margin: 0 3px;
     }
     
-    .header {
-        margin: 10px 0;
-    }
-    
-    .header-container {
-        padding: 12px;
-        border-radius: 12px;
-    }
-    
-    .photo-container {
-        float: left;
-        margin: 0 12px 6px 0;
-    }
-    
+    /* Шапка */
     .profile-photo {
-        max-width: 110px;
+        max-width: 130px;
     }
     
     .header-text h1 {
         font-size: 1.2em;
-        margin-bottom: 5px;
     }
     
-    .header-text h2 {
-        font-size: 0.95em;
-        margin: 4px 0;
-    }
-    
-    .header-text h3 {
-        font-size: 0.85em;
-        margin: 2px 0;
-        line-height: 1.3;
-        text-align: justify;
-    }
-    
-    .main-content {
-        padding: 15px;
-        border-radius: 10px;
-    }
-    
-    .resume-item {
-        padding: 12px;
-    }
-    
+    /* Меню */
     .menu-button {
         padding: 12px;
-        font-size: 13px;
-    }
-    
-    .lang-box a, .university-links a {
-        font-size: 13px;
-        padding: 5px 10px;
-    }
-    
-    /* Увеличиваем шрифты для лучшей читаемости */
-    body {
-        font-size: 15px;
-    }
-    
-    .resume-label, .resume-value {
         font-size: 14px;
     }
-}
-
-/* Очень маленькие телефоны до 380px */
-@media (max-width: 380px) {
-    .photo-container {
-        float: left;
-        margin: 0 10px 5px 0;
-    }
     
-    .profile-photo {
-        max-width: 90px;
-    }
-    
-    .header-text h1 {
-        font-size: 1.1em;
-    }
-    
-    .header-text h2 {
-        font-size: 0.9em;
-    }
-    
-    .header-text h3 {
-        font-size: 0.8em;
-        line-height: 1.4;
-    }
-    
-    /* На очень маленьких экранах убираем обтекание */
-    .photo-container {
-        float: none;
-        margin: 0 auto 10px auto;
-        text-align: center;
-    }
-    
-    .profile-photo {
-        display: inline-block;
-    }
-    
-    .header-text {
-        text-align: center;
-    }
-    
-    .header-text h3 {
-        text-align: center;
-    }
-    
-    .menu-button {
-        padding: 10px;
+    /* Нижнее меню */
+    .footer-item {
+        padding: 8px 12px;
         font-size: 12px;
     }
 }
 
-/* Очистка обтекания */
-.header-container::after {
-    content: "";
-    display: table;
-    clear: both;
+/* Исправление для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .main-menu,
+    .main-content,
+    .video-section {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
 }
 
-/* Улучшение обтекания текста вокруг изображения */
+/* Убираем все обтекания */
 .photo-container {
-    shape-outside: margin-box;
+    float: none !important;
 }
 
-.header-text h3 {
-    text-align: left;
-    word-spacing: normal;
-    letter-spacing: normal;
-}
-
-/* Гарантия что текст правильно обтекает фото */
-.header-text {
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
-}
-
-/* Для очень длинного текста обеспечиваем хорошее обтекание */
-.header-text h3 br {
-    display: inline; /* Сохраняем переносы строк из HTML */
+.header-container::after {
+    content: none;
 }
