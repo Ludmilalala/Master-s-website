@@ -17,8 +17,8 @@
 .dissertation-content h2 {
     color: #000000;
     font-weight: 700;
-    margin: 30px 0 15px 0;
-    font-size: 14px;
+    margin: 35px 0 25px 0;
+    font-size: 1.4em; /* Увеличили */
     text-align: left;
     text-transform: none;
     border-bottom: none;
@@ -29,26 +29,26 @@
 .dissertation-content h3 {
     color: #000000;
     font-weight: 700;
-    margin: 20px 0 12px 0;
-    font-size: 14px;
+    margin: 30px 0 18px 0;
+    font-size: 1.3em; /* Увеличили */
     text-align: left;
     text-indent: 1.5em;
 }
 
 .dissertation-content h4 {
     color: #000000;
-    margin: 18px 0 10px 0;
-    font-size: 14px;
+    margin: 25px 0 15px 0;
+    font-size: 1.2em; /* Увеличили */
     text-align: left;
     text-indent: 1.5em;
     font-weight: 700;
 }
 
 .dissertation-content p {
-    margin: 0 0 12px 0;
+    margin: 0 0 18px 0;
     text-align: justify;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 1.1em; /* Увеличили */
+    line-height: 1.7;
     text-indent: 1.5em;
     color: #000000;
 }
@@ -61,9 +61,9 @@
 }
 
 .dissertation-content li {
-    margin-bottom: 6px;
-    font-size: 14px;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    font-size: 1.1em; /* Увеличили размер в списках */
+    line-height: 1.6;
     text-align: justify;
 }
 
@@ -77,22 +77,24 @@
 }
 
 .abstract-section h2 {
-    color: #000000;
+    color: #2c3e50;
     border-bottom: none;
-    margin: 0 0 15px 0;
+    margin: 0 0 30px 0;
     text-indent: 0;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 1.2em !important; /* Увеличили до размера как у содержания */
 }
 
 .abstract-section p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 1.1em; /* Еще увеличили */
+    line-height: 1.7;
     text-indent: 1.5em;
     text-align: justify;
     font-style: italic;
-    margin: 0 0 12px 0;
+    margin: 0 0 18px 0;
+    color: #5a6c7d;
 }
 
 .content-section {
@@ -104,13 +106,14 @@
 }
 
 .content-section h2 {
-    color: #000000;
+    color: #2c3e50;
     border-bottom: none;
-    margin: 0 0 15px 0;
+    margin: 0 0 25px 0;
     text-indent: 0;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 1.2em !important; /* Увеличили */
 }
 
 /* Стили для содержания в стиле статьи */
@@ -135,10 +138,10 @@
     color: #000000;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1.2em; /* Еще увеличили */
     display: block;
-    padding: 6px 0;
-    /* transition: color 0.3s ease; */
+    padding: 12px 0;
+    line-height: 1.4;
 }
 
 .toc-link:hover {
@@ -154,9 +157,10 @@
 .toc-sublink {
     color: #333;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 1.1em; /* Еще увеличили */
     display: block;
-    padding: 4px 0;
+    padding: 10px 0;
+    line-height: 1.4;
     /* transition: all 0.3s ease; */
     border-bottom: 1px solid transparent;
 }
@@ -180,10 +184,10 @@
 }
 
 .references-list li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: justify;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 1.1em; /* Еще увеличили */
+    line-height: 1.6;
     break-inside: avoid;
     text-indent: 0;
 }
@@ -257,7 +261,99 @@ html {
     background: white;
 }
 
-/* Мобильная адаптация для диссертации */
+/* Адаптация для планшетов */
+@media (max-width: 1200px) {
+    .dissertation-content {
+        padding: 15px;
+    }
+    
+    .main-content.dissertation-content {
+        padding: 25px 15px;
+    }
+    
+    .abstract-section h2,
+    .content-section h2 {
+        font-size: 1.7em;
+    }
+    
+    .abstract-section p {
+        font-size: 1.15em;
+    }
+    
+    .dissertation-content h2 {
+        font-size: 1.3em;
+        text-indent: 1.2em;
+        margin: 30px 0 20px 0;
+    }
+    
+    .dissertation-content h3, 
+    .dissertation-content h4 {
+        font-size: 1.2em;
+        text-indent: 1.2em;
+    }
+    
+    .dissertation-content p {
+        font-size: 1.05em;
+        text-indent: 1.2em;
+        line-height: 1.6;
+    }
+    
+    .dissertation-content ul, 
+    .dissertation-content ol {
+        padding-left: 35px;
+    }
+    
+    .dissertation-content li {
+        font-size: 1.05em;
+    }
+    
+    .toc-link {
+        font-size: 1.15em;
+    }
+    
+    .toc-sublink {
+        font-size: 1.05em;
+    }
+    
+    .references-list li {
+        font-size: 1.05em;
+    }
+}
+
+/* Адаптация для больших телефонов */
+@media (max-width: 992px) {
+    .abstract-section h2,
+    .content-section h2 {
+        font-size: 1.6em;
+    }
+    
+    .abstract-section p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+    
+    .dissertation-content p {
+        font-size: 1em;
+    }
+    
+    .dissertation-content h2 {
+        font-size: 1.2em;
+    }
+    
+    .dissertation-content h3 {
+        font-size: 1.1em;
+    }
+    
+    .toc-link {
+        font-size: 1.1em;
+    }
+    
+    .toc-sublink {
+        font-size: 1em;
+    }
+}
+
+/* Адаптация для средних телефонов */
 @media (max-width: 768px) {
     .dissertation-content {
         padding: 15px;
@@ -267,31 +363,43 @@ html {
         padding: 20px 15px;
     }
     
+    .abstract-section h2,
+    .content-section h2 {
+        font-size: 1.5em;
+    }
+    
+    .abstract-section p {
+        font-size: 1.05em;
+        line-height: 1.6;
+    }
+    
     .dissertation-content h2 {
-        font-size: 13px;
+        font-size: 1.1em;
         text-indent: 1em;
-        margin: 20px 0 12px 0;
+        margin: 25px 0 15px 0;
     }
     
     .dissertation-content h3, 
     .dissertation-content h4 {
-        font-size: 13px;
+        font-size: 1em;
         text-indent: 1em;
+        margin: 20px 0 12px 0;
     }
     
     .dissertation-content p {
-        font-size: 13px;
+        font-size: 0.95em;
         text-indent: 1em;
-        line-height: 1.4;
+        line-height: 1.6;
+        margin: 0 0 12px 0;
     }
     
     .dissertation-content ul, 
     .dissertation-content ol {
-        padding-left: 25px;
+        padding-left: 30px;
     }
     
     .dissertation-content li {
-        font-size: 13px;
+        font-size: 0.95em;
     }
     
     .abstract-section, 
@@ -304,11 +412,100 @@ html {
     }
     
     .toc-link {
-        font-size: 13px;
+        font-size: 1.05em;
+        padding: 10px 0;
     }
     
     .toc-sublink {
-        font-size: 12px;
+        font-size: 0.95em;
+        padding: 8px 0;
+    }
+    
+    .references-list {
+        padding-left: 30px;
+    }
+    
+    .references-list li {
+        font-size: 0.95em;
+    }
+    
+    .table {
+        font-size: 13px;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 8px 6px;
+    }
+}
+
+/* Адаптация для маленьких телефонов */
+@media (max-width: 480px) {
+    .dissertation-content {
+        padding: 12px;
+    }
+    
+    .main-content.dissertation-content {
+        padding: 18px 12px;
+    }
+    
+    .abstract-section h2,
+    .content-section h2 {
+        font-size: 1.4em;
+    }
+    
+    .abstract-section p {
+        font-size: 1em;
+        line-height: 1.5;
+        text-indent: 1em;
+        margin: 0 0 10px 0;
+    }
+    
+    .dissertation-content h2 {
+        font-size: 1.05em;
+        text-indent: 0.8em;
+        margin: 20px 0 12px 0;
+    }
+    
+    .dissertation-content h3,
+    .dissertation-content h4 {
+        font-size: 0.95em;
+        text-indent: 0.8em;
+        margin: 18px 0 10px 0;
+    }
+    
+    .dissertation-content p {
+        font-size: 0.9em;
+        text-indent: 0.8em;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    
+    .dissertation-content ul, 
+    .dissertation-content ol {
+        padding-left: 25px;
+    }
+    
+    .dissertation-content li {
+        font-size: 0.9em;
+    }
+    
+    .content-section {
+        padding: 18px;
+    }
+    
+    .toc-container {
+        padding: 18px;
+    }
+    
+    .toc-link {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+    
+    .toc-sublink {
+        font-size: 0.9em;
+        padding: 6px 0;
     }
     
     .references-list {
@@ -316,7 +513,7 @@ html {
     }
     
     .references-list li {
-        font-size: 12px;
+        font-size: 0.9em;
     }
     
     .table {
@@ -329,7 +526,17 @@ html {
     }
 }
 
-@media (max-width: 480px) {
+/* Адаптация для очень маленьких телефонов */
+@media (max-width: 360px) {
+    .abstract-section h2,
+    .content-section h2 {
+        font-size: 1.3em;
+    }
+    
+    .abstract-section p {
+        font-size: 0.95em;
+    }
+    
     .dissertation-content {
         padding: 10px;
     }
@@ -341,12 +548,12 @@ html {
     .dissertation-content h2,
     .dissertation-content h3,
     .dissertation-content h4 {
-        font-size: 12px;
+        font-size: 0.9em;
         text-indent: 0.8em;
     }
     
     .dissertation-content p {
-        font-size: 12px;
+        font-size: 0.85em;
         text-indent: 0.8em;
     }
     
@@ -357,6 +564,14 @@ html {
     
     .references-list {
         padding-left: 20px;
+    }
+    
+    .toc-link {
+        font-size: 0.95em;
+    }
+    
+    .toc-sublink {
+        font-size: 0.85em;
     }
 }
 
@@ -378,4 +593,32 @@ html {
 /* Убираем разделительные линии */
 .dissertation-content hr {
     display: none;
+}
+
+/* Улучшение читаемости для всех экранов */
+.abstract-section {
+    background: #f8f9fa;
+    
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Убираем горизонтальную прокрутку на мобильных */
+.dissertation-content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Адаптация таблиц для мобильных */
+@media (max-width: 768px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .table th,
+    .table td {
+        min-width: 80px;
+    }
 }
