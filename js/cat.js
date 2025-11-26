@@ -35,10 +35,7 @@ class PawTracker {
         const rect = this.canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
-        // Проверяем, что координаты внутри канваса
-    if (x >= 0 && x <= this.canvas.width && y >= 0 && y <= this.canvas.height) {
         this.pawDraw(x, y);
-    }
     }
     
     handleTouchMove(event) {
@@ -47,9 +44,7 @@ class PawTracker {
             const rect = this.canvas.getBoundingClientRect();
             const x = event.touches[0].clientX - rect.left;
             const y = event.touches[0].clientY - rect.top;
-            if (x >= 0 && x <= this.canvas.width && y >= 0 && y <= this.canvas.height) {
             this.pawDraw(x, y);
-        }
         }
     }
     
