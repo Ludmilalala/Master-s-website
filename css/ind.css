@@ -1049,27 +1049,7 @@
     .cat_container {
         transform: scale(0.15);
     }
-
-    #cat-section,
-    #music-section {
-        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
-        overflow: auto;
-    }
-    
-    /* Улучшаем обработку касаний */
-    .hobby-section {
-        touch-action: pan-y; /* Разрешаем только вертикальный скролл */
-    }
-    
-    /* Канвасы не должны блокировать скролл */
-    #paw-canvas,
-    #music-canvas {
-        pointer-events: none;
-        touch-action: none;
-    }
 }
-
-
 
 /* Адаптация для маленьких телефонов 480px - 600px */
 @media (max-width: 600px) {
@@ -1245,8 +1225,6 @@
     .cat_container {
         transform: scale(0.1);
     }
-
-    
 }
 
 /* Особые стили для очень маленьких экранов */
