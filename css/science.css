@@ -72,6 +72,7 @@
     color: #4a5568;
     line-height: 1.5;
     margin-bottom: 5px;
+    font-size: 1em; /* Явно указываем размер шрифта */
 }
 
 .publication-item strong {
@@ -94,6 +95,7 @@
     font-weight: 500;
     transition: all 0.3s ease;
     margin-top: 10px;
+    font-size: 0.95em; /* Немного меньше основного текста */
 }
 
 .article-link:hover {
@@ -118,6 +120,10 @@
     
     .publication-item {
         padding: 18px;
+    }
+    
+    .publication-item p {
+        font-size: 0.95em; /* Минимальное уменьшение */
     }
 }
 
@@ -145,7 +151,11 @@
     }
     
     .publication-item p {
-        font-size: 14px;
+        font-size: 0.9em; /* Нормальный читаемый размер */
+    }
+    
+    .article-link {
+        font-size: 0.9em;
     }
 }
 
@@ -174,14 +184,14 @@
     }
     
     .publication-item p {
-        font-size: 13px;
-        line-height: 1.4;
-        margin-bottom: 4px;
+        font-size: 0.9em; /* Сохраняем читаемый размер */
+        line-height: 1.5; /* Улучшаем читаемость */
+        margin-bottom: 6px;
     }
     
     .article-link {
         padding: 7px 14px;
-        font-size: 13px;
+        font-size: 0.9em;
     }
 }
 
@@ -205,18 +215,18 @@
     }
     
     .publication-item h3 {
-        font-size: 0.95em;
-        margin-bottom: 6px;
+        font-size: 1em; /* Сохраняем нормальный размер */
+        margin-bottom: 8px;
     }
     
     .publication-item p {
-        font-size: 12px;
-        line-height: 1.3;
+        font-size: 0.9em; /* Минимальный комфортный размер */
+        line-height: 1.5;
     }
     
     .article-link {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 8px 16px;
+        font-size: 0.9em;
         margin-top: 8px;
     }
 }
@@ -237,23 +247,35 @@
     }
     
     .publication-item {
-        padding: 10px;
+        padding: 12px;
     }
     
     .publication-item h3 {
-        font-size: 0.9em;
-        margin-bottom: 5px;
+        font-size: 0.95em;
+        margin-bottom: 8px;
     }
     
     .publication-item p {
-        font-size: 11px;
-        line-height: 1.3;
+        font-size: 0.85em; /* Минимальный размер, но читаемый */
+        line-height: 1.5;
     }
     
     .article-link {
-        padding: 5px 10px;
-        font-size: 11px;
-        width: 100%;
+        padding: 8px 14px;
+        font-size: 0.85em;
+        width: auto; /* Не растягиваем на всю ширину */
         text-align: center;
+    }
+}
+
+/* Гарантируем читаемость на всех устройствах */
+@media (max-width: 360px) {
+    .publication-item p {
+        font-size: 0.85em; /* Абсолютный минимум */
+        line-height: 1.5;
+    }
+    
+    .publication-item h3 {
+        font-size: 0.95em;
     }
 }
