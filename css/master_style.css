@@ -627,16 +627,16 @@ body {
     .header-text h1 {
         font-size: 1.6em;
         margin-top: 0;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
     }
     
     .header-text h2 {
         font-size: 1.15em;
-        margin: 8px 0;
+        margin: 4px 0;
     }
     
     .header-text h3 {
-        margin: 6px 0;
+        margin: 4px 0;
         line-height: 1.4;
     }
     
@@ -678,7 +678,7 @@ body {
     
     .photo-container {
         float: left;
-        margin: 0 15px 10px 0;
+        margin: 0 15px 8px 0;
         shape-outside: margin-box;
     }
     
@@ -688,12 +688,12 @@ body {
     
     .header-text h1 {
         font-size: 1.4em;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
     
     .header-text h2 {
         font-size: 1.1em;
-        margin: 6px 0;
+        margin: 4px 0;
     }
     
     .header-text h3 {
