@@ -21,6 +21,51 @@
     visibility: hidden;
 } */
 
+
+/* Стили для кнопки назад */
+.article-back-box {
+    display: flex;
+    align-items: center;
+}
+
+.article-back-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+}
+
+.article-back-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Выравнивание университетских ссылок */
+.university-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Заменяем margin-left на gap */
+}
+
+.university-links a {
+    margin-left: 0; /* Убираем старый margin */
+}
+
+/* Уменьшаем высоту top-block только на страницах статей */
+.top-block {
+    padding: 12px 20px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .udk {
     text-align: left;
     font-weight: bold;
@@ -180,8 +225,9 @@
 
 .article-back-link {
     display: block;
+     margin: 0;
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 8px 16px;
     background: #667eea;
     color: white;
     text-decoration: none;
@@ -360,6 +406,26 @@
         font-size: 13px;
         line-height: 1.3;
     }
+
+     .top-block {
+        padding: 10px 15px !important;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .article-back-box, .university-links {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .university-links {
+        gap: 15px;
+    }
+    
+    .article-back-link, .university-links a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
     
     .authors, .university, .contact {
         font-size: 13px;
@@ -415,5 +481,14 @@
     .section p {
         font-size: 12px;
         text-indent: 0.8em;
+    }
+
+    .university-links {
+        gap: 10px;
+    }
+    
+    .article-back-link, .university-links a {
+        padding: 5px 10px;
+        font-size: 13px;
     }
 }
