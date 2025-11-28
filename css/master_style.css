@@ -39,6 +39,31 @@ body {
     width: 100%; /* Растягиваем на всю ширину */
 
 }
+.article-back-box a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.article-back-box a{
+	color: #ffffff;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-bottom: 10;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    
+}
+
+.lang-box a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
 
 .lang-box a{
 	color: #ffffff;
