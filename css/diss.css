@@ -218,18 +218,43 @@ html {
     text-indent: 0;
 }
 
-.academic-link {
-    color: #000000; /* Наследует цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-weight: normal; /* Обычное начертание */
-    font-style: normal; /* Обычный шрифт */
-    cursor: pointer; /* Курсор-указатель */
+#references a,
+#references .academic-link,
+.references-list a,
+.references-list .academic-link {
+    color: #000000 !important; /* Черный цвет */
+    text-decoration: none !important; /* Без подчеркивания */
+    font-weight: normal !important;
+    font-style: normal !important;
+    border-bottom: 1px solid transparent;
 }
 
-.academic-link:hover {
-    color: inherit; /* При наведении остается тот же цвет */
-    text-decoration: underline; /* Можно добавить подчеркивание при наведении */
-    text-decoration-color: #666; /* Серый цвет подчеркивания */
+#references a:hover,
+#references .academic-link:hover,
+.references-list a:hover,
+.references-list .academic-link:hover {
+    color: #333333 !important;
+    text-decoration: underline !important;
+    text-decoration-color: #666666 !important;
+}
+
+/* Также обработаем все ссылки внутри абзацев с литературой */
+.abstract-text a {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+.abstract-text a:hover {
+    color: #333333 !important;
+    text-decoration: underline !important;
+}
+
+/* Сброс стилей браузера для всех ссылок в разделе литературы */
+#references a:link,
+#references a:visited,
+#references a:active {
+    color: #000000 !important;
+    text-decoration: none !important;
 }
 
 /* Стили для улучшения читаемости */
