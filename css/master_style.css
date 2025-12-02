@@ -59,6 +59,7 @@ body {
     
 }
 
+
 .lang-box a:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.2);
@@ -979,4 +980,21 @@ body {
 /* Для очень длинного текста обеспечиваем хорошее обтекание */
 .header-text h3 br {
     display: inline; /* Сохраняем переносы строк из HTML */
+}
+
+/* Добавьте в конец файла: */
+
+/* Стили для fallback видеоплеера */
+.video-fallback {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-fallback video {
+    width: 100%;
+    height: auto;
+    display: block;
 }
