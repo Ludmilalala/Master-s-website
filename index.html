@@ -45,8 +45,8 @@
                     <h3><a href="http://fisp.iknt.donntu.ru/" target="_blank">Факультет интеллектуальных систем и
                             программирования</a></h3>
                     <h3><a href="http://fisp.iknt.donntu.ru/kafedra-programmnoy-inzhenerii-imeni-lva-petrovicha-feldmana"
-                            target="_blank">Кафедра программной инженерии</a></h3>
-                    <h3>Направление: 09.04.04 «Программная инженерия им. Л.П. Фельдмана»</h3>
+                            target="_blank">Кафедра Программная инженерия им. Л. П. Фельдмана</a></h3>
+                    <h3>Направление: 09.04.04 «Программная инженерия»</h3>
                     <h3>Профиль подготовки: «Методы и средства разработки программного обеспечения»</h3>
                     <h2>Тема выпускной квалификационной работы магистра: «Исследование использования нейронных сетей для
                         автоматического
@@ -61,7 +61,7 @@
 
     <div class="container">
         <div class="content-wrapper">
-            
+
 
             <nav class="main-menu">
                 <div class="menu-container">
@@ -75,8 +75,17 @@
             <div class="video-section">
                 <h3>Магистр рассказывает о себе</h3>
 
+                <!-- Стандартный HTML5 видеоплеер как fallback -->
+                <div class="video-fallback" id="video-fallback">
+                    <video controls width="100%">
+                        <source src="video/about-me.mp4" type="video/mp4">
+                        <source src="video/about-me.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео тег.
+                    </video>
+                </div>
+
                 <!-- Анимированная кнопка воспроизведения -->
-                <div class="video-player-container">
+                <div class="video-player-container" id="animated-video-button" style="display: none;">
                     <div class="play-backdrop"></div>
                     <div class="play-button">
                         <svg class="play-circles" viewBox="0 0 152 152">
