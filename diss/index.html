@@ -44,8 +44,8 @@
                     <h3><a href="http://fisp.iknt.donntu.ru/" target="_blank">Факультет интеллектуальных систем и
                             программирования</a></h3>
                     <h3><a href="http://fisp.iknt.donntu.ru/kafedra-programmnoy-inzhenerii-imeni-lva-petrovicha-feldmana"
-                            target="_blank">Кафедра программной инженерии</a></h3>
-                    <h3>Направление: 09.04.04 «Программная инженерия им. Л.П. Фельдмана»</h3>
+                            target="_blank">Кафедра Программная инженерия им. Л. П. Фельдмана</a></h3>
+                    <h3>Направление: 09.04.04 «Программная инженерия»</h3>
                     <h3>Профиль подготовки: «Методы и средства разработки программного обеспечения»</h3>
                     <h2>Тема выпускной квалификационной работы магистра: «Исследование использования нейронных сетей для
                         автоматического
@@ -122,7 +122,7 @@
                             </div>
 
                             <div class="toc-item">
-                                <a href="#references" class="toc-link">Список использованной литературы</a>
+                                <a href="#references" class="toc-link">Список литературы</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,8 @@
                             корректировки.</p>
 
                         <p>Разработка таких моделей особенно актуальна в условиях стремительного роста кода с открытым
-                            исходным текстом и многообразия языков программирования <a href="#references" class="ref-link">[1]</a>. Интеграция нейронных сетей в
+                            исходным текстом и многообразия языков программирования <a href="#references"
+                                class="ref-link">[1]</a>. Интеграция нейронных сетей в
                             процессы разработки программного обеспечения может существенно повысить производительность
                             труда программистов и надёжность создаваемых продуктов <a href="#references"
                                 class="ref-link">[2]</a>.</p>
@@ -195,7 +196,8 @@
                         <p>Под ошибкой в программировании понимается любое действие разработчика, результат которого
                             приводит к тому, что программа не выполняет требуемую функцию, выполняет её ненадлежащим
                             образом, выполняет ненадлежащие действия, не предусмотренные спецификацией, или прекращает
-                            выполнение <a href="#references" class="ref-link">[10]</a>. Ошибки могут быть как очевидными, так и скрытыми, проявляющимися только при
+                            выполнение <a href="#references" class="ref-link">[10]</a>. Ошибки могут быть как
+                            очевидными, так и скрытыми, проявляющимися только при
                             определённой комбинации входных данных.</p>
 
                         <p>В рамках исследования принята классификация ошибок на синтаксические, семантические,
@@ -250,7 +252,8 @@
                         </h3>
                         <p>С развитием методов машинного обучения и особенно глубоких нейросетевых архитектур появилась
                             возможность рассматривать программный код не просто как формальный текст, а как сложную
-                            структуру, поддающуюся семантическому анализу <a href="#references" class="ref-link">[18]</a>. Современные модели способны не только
+                            структуру, поддающуюся семантическому анализу <a href="#references"
+                                class="ref-link">[18]</a>. Современные модели способны не только
                             анализировать код на предмет ошибок, но и предлагать исправления, подражая логике действий
                             опытного программиста.</p>
 
@@ -433,7 +436,8 @@
                         <h3 id="section2_3">2.3 Концепция функционирования модели</h3>
                         <p>Представленная в данной работе модель исправления ошибок в программном коде основана на
                             принципах encoder-decoder архитектуры и реализует процесс трансформации входного
-                            (ошибочного) кода в корректный с точки зрения синтаксиса и логики фрагмент<a href="#references" class="ref-link">[30]</a>. В рамках
+                            (ошибочного) кода в корректный с точки зрения синтаксиса и логики фрагмент<a
+                                href="#references" class="ref-link">[30]</a>. В рамках
                             функционирования системы можно выделить следующие ключевые стадии: получение входных данных,
                             предобработка и токенизация, формирование скрытого представления, генерация исправленного
                             кода, декодирование и постобработка.</p>
@@ -525,103 +529,104 @@
 
                     <section id="references">
                         <h2>Список использованной литературы</h2>
-                        <ol class="references-list">
-                            <li id="ref1">Фэн Ц., Го Д., Тан Д. и др. CodeBERT: предварительно обученная модель для
-                                программирования и естественного языка // arXiv:2002.08155.</li>
-                            <li id="ref2">Ахмад В., Чакраборти С., Рэй Б. и др. Унифицированное предварительное обучение
-                                для
-                                понимания и генерации программ // arXiv:2103.06333.</li>
-                            <li id="ref3">Кан М., Сон К. CodeT5+: открытые модели LLM для понимания и генерации кода //
-                                arXiv:2305.07922.</li>
-                            <li id="ref4">Туфано М. и др. Эмпирическое исследование исправления ошибок с помощью
-                                нейронного
-                                машинного перевода // ACM TSE.</li>
-                            <li id="ref5">Ефимов С., Мартынов И. Обзор моделей генерации кода с использованием
-                                трансформеров //
-                                Вестник информационных технологий. -- 2022. -- №4. -- С. 35--41.</li>
-                            <li id="ref6">Святов С.А. Модели анализа исходного кода на основе трансформеров //
-                                Программные
-                                продукты и системы. -- 2022. -- №1. -- С. 23--30.</li>
-                            <li id="ref7">Леклер А., МакМиллан К. Рекомендации по датасетам для суммаризации исходного
-                                кода //
-                                arXiv:2005.00451.</li>
-                            <li id="ref8">Пименов И. С., Козлов А. Н. Применение моделей машинного обучения для поиска
-                                багов в
-                                программном обеспечении // Современные проблемы науки и образования. -- 2022. -- №6.
-                            </li>
-                            <li id="ref9">Chen Z. et al. A Comprehensive Survey on Code Intelligence via Pre-trained
-                                Models // ACM
-                                Computing Surveys. -- 2023.</li>
-                            <li id="ref10">OpenAI. Codex Technical Report. -- 2021.</li>
-                            <li id="ref11">Vaswani A. et al. Attention is all you need // Advances in neural information
-                                processing
-                                systems. -- 2017.</li>
-                            <li id="ref12">Devlin J. et al. BERT: Pre-training of deep bidirectional transformers for
-                                language
-                                understanding // arXiv:1810.04805.</li>
-                            <li id="ref13">Brown T.B. et al. Language models are few-shot learners // arXiv:2005.14165.
-                            </li>
-                            <li id="ref14">Raffel C. et al. Exploring the limits of transfer learning with a unified
-                                text-to-text
-                                transformer // arXiv:1910.10683.</li>
-                            <li id="ref15">Wang Y. et al. CodeT5: Identifier-aware unified pre-trained encoder-decoder
-                                models for
-                                code understanding and generation // arXiv:2109.00859.</li>
-                            <li id="ref16">Guo D. et al. GraphCodeBERT: Pre-training code representations with data flow
-                                //
-                                arXiv:2009.08366.</li>
-                            <li id="ref17">Li Y. et al. CodeXGLUE: A benchmark dataset and open challenge for code
-                                intelligence //
-                                arXiv:2102.04664.</li>
-                            <li id="ref18">Allamanis M. et al. A survey of machine learning for big code and naturalness
-                                // ACM
-                                Computing Surveys. -- 2018.</li>
-                            <li id="ref19">Hindle A. et al. On the naturalness of software // Communications of the ACM.
-                                -- 2016.
-                            </li>
-                            <li id="ref20">Ray B. et al. A large-scale study of programming languages and code quality
-                                in GitHub //
-                                Communications of the ACM. -- 2017.</li>
-                            <li id="ref21">Le Goues C. et al. A systematic study of automated program repair: Fixing 55
-                                out of 105
-                                bugs for $8 each // ICSE. -- 2012.</li>
-                            <li id="ref22">Monperrus M. Automatic software repair: A bibliography // ACM Computing
-                                Surveys. --
-                                2018.</li>
-                            <li id="ref23">Gazzola L. et al. Automatic software repair: A survey // IEEE Transactions on
-                                Software
-                                Engineering. -- 2019.</li>
-                            <li id="ref24">Chen Z. et al. SequenceR: Sequence-to-sequence learning for end-to-end
-                                program repair //
-                                IEEE Transactions on Software Engineering. -- 2021.</li>
-                            <li id="ref25">Bhatia S. et al. Automated correction for syntax errors in programming
-                                assignments using
-                                recurrent neural networks // arXiv:1603.06129.</li>
-                            <li id="ref26">Фэн Ц., Го Д., Тан Д. и др. CodeBERT: предварительно обученная модель для
-                                программирования и естественного языка // arXiv:2002.08155.</li>
-                            <li id="ref27">Ахмад В., Чакраборти С., Рэй Б. и др. Унифицированное предварительное
-                                обучение для
-                                понимания и генерации программ // arXiv:2103.06333.</li>
-                            <li id="ref28">Кан М., Сон К. CodeT5+: открытые модели LLM для понимания и генерации кода //
-                                arXiv:2305.07922.</li>
-                            <li id="ref29">Туфано М. и др. Эмпирическое исследование исправления ошибок с помощью
-                                нейронного
-                                машинного перевода // ACM TSE.</li>
-                            <li id="ref30">Ефимов С., Мартынов И. Обзор моделей генерации кода с использованием
-                                трансформеров //
-                                Вестник информационных технологий. -- 2022. -- №4. -- С. 35--41.</li>
-                            <li id="ref31">Святов С.А. Модели анализа исходного кода на основе трансформеров //
-                                Программные
-                                продукты и системы. -- 2022. -- №1. -- С. 23--30.</li>
-                            <li id="ref32">Леклер А., МакМиллан К. Рекомендации по датасетам для суммаризации исходного
-                                кода //
-                                arXiv:2005.00451.</li>
-                            <li id="ref33">Пименов И. С., Козлов А. Н. Применение моделей машинного обучения для поиска
-                                багов в
-                                программном обеспечении // Современные проблемы науки и образования. -- 2022. -- №6.
-                            </li>
-                            
-                        </ol>
+                        <p id="ref1" class="abstract-text">1. Красиков И. А., Симонов И. Н., Гаев Л. В. Применение
+                            искусственного интеллекта в разработке программного обеспечения [Электронный ресурс] //
+                            Инновационная наука. – 2023. – URL: <a
+                                href="https://cyberleninka.ru/article/n/primenenie-iskusstvennogo-intellekta-v-razrabotke-programmnogo-obespecheniya"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/primenenie-iskusstvennogo-intellekta-v-razrabotke-programmnogo-obespecheniya</a>.
+                        </p>
+                        <p id="ref2" class="abstract-text">2. Бевзенко С. А. ПРИМЕНЕНИЕ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И
+                            МАШИННОГО ОБУЧЕНИЯ В РАЗРАБОТКЕ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ // Инновации и инвестиции. 2023.
+                            №8. URL:<a
+                                href="https://cyberleninka.ru/article/n/primenenie-iskusstvennogo-intellekta-i-mashinnogo-obucheniya-v-razrabotke-programmnogo-obespecheniya"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/primenenie-iskusstvennogo-intellekta-i-mashinnogo-obucheniya-v-razrabotke-programmnogo-obespecheniya</a>.
+                        </p>
+                        <p id="ref3" class="abstract-text">3. Дукаев Магомед Ширваниевич, Саровойтова Евгения
+                            Валерьевна, Батчаева Зурида Борисовна ИСПОЛЬЗОВАНИЕ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА В
+                            АВТОМАТИЗАЦИИ РАЗРАБОТКИ ВЕБ-ПРИЛОЖЕНИЙ // Современные наукоемкие технологии. Региональное
+                            приложение . 2024. №4 (80). URL: <a
+                                href="https://cyberleninka.ru/article/n/ispolzovanie-iskusstvennogo-intellekta-v-avtomatizatsii-razrabotki-veb-prilozheniy"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/ispolzovanie-iskusstvennogo-intellekta-v-avtomatizatsii-razrabotki-veb-prilozheniy</a>.
+                        </p>
+                        <p id="ref4" class="abstract-text">4. Благодельский А. С. ПРИМЕНЕНИЕ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА В
+                            ФРОНТЕНД-РАЗРАБОТКЕ: ОТ ТЕОРИИ К ПРАКТИКЕ // Вестник науки. 2024. №5 (74). URL: <a
+                                href="https://cyberleninka.ru/article/n/primenenie-iskusstvennogo-intellekta-v-frontend-razrabotke-ot-teorii-k-praktike"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/primenenie-iskusstvennogo-intellekta-v-frontend-razrabotke-ot-teorii-k-praktike</a>.
+                        </p>
+                        <p id="ref5" class="abstract-text">5. Караманянц Микаэл Бернардович Способы оптимизации расходов
+                            на производство программного обеспечения с применением искусственного интеллекта //
+                            Инновации и инвестиции. 2023. №9. URL: <a
+                                href="https://cyberleninka.ru/article/n/sposoby-optimizatsii-rashodov-na-proizvodstvo-programmnogo-obespecheniya-s-primeneniem-iskusstvennogo-intellekta"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/sposoby-optimizatsii-rashodov-na-proizvodstvo-programmnogo-obespecheniya-s-primeneniem-iskusstvennogo-intellekta</a>.
+                        </p>
+                        <p id="ref6" class="abstract-text">6. Иламанов Б.Б. ИНТЕГРАЦИЯ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА В
+                            РАЗРАБОТКЕ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ // Вестник науки №12 (69) том 2. С. 1207 - 1211. 2023 г.
+                            ISSN 2712-8849 // Электронный ресурс: <a href="https://www.вестник-науки.рф/article/11535"
+                                target="_blank" class="academic-link">https://www.вестник-науки.рф/article/11535</a>.
+                        </p>
+                        <p id="ref7" class="abstract-text">7. Хабибулин Д. М. ИСПОЛЬЗОВАНИЕ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И
+                            МАШИННОГО ОБУЧЕНИЯ В АВТОМАТИЗАЦИИ ТЕСТИРОВАНИЯ // Инновационная наука. 2024. №8-1. URL: <a
+                                href="https://cyberleninka.ru/article/n/ispolzovanie-iskusstvennogo-intellekta-i-mashinnogo-obucheniya-v-avtomatizatsii-testirovaniya"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/ispolzovanie-iskusstvennogo-intellekta-i-mashinnogo-obucheniya-v-avtomatizatsii-testirovaniya</a>.
+                        </p>
+                        <p id="ref8" class="abstract-text">8. «Применение методов искусственного интеллекта в
+                            автоматизированном тестировании ПО» [Электронный ресурс] // Habr.com, 2024.– URL: <a
+                                href="https://habr.com/ru/articles/869020/" target="_blank"
+                                class="academic-link">https://habr.com/ru/articles/869020/</a>. </p>
+                        <p id="ref9" class="abstract-text">9. «ИИ в программной инженерии: обзор практик, инструментов и
+                            проблем» [Электронный ресурс] // Habr.com, 2025. – URL: <a
+                                href="https://habr.com/ru/companies/tbank/articles/966368/" target="_blank"
+                                class="academic-link">https://habr.com/ru/companies/tbank/articles/966368/</a>. </p>
+                        <p id="ref10" class="abstract-text">10. Бауэр Р. В. Применение технологий машинного обучения и
+                            искусственного интеллекта для оценки трудоёмкости работ в проектах по разработке
+                            программного обеспечения: выпускная квалификационная работа магистра [Текст] // eLibrary.ru
+                            (СПбПУ). – 2021.</p>
+                        <p id="ref11" class="abstract-text">11. Токторбаев А. М., Токтомуратова Ж. Э. РОЛЬ
+                            ИСКУССТВЕННОГО ИНТЕЛЛЕКТА В СОЗДАНИИ ВЕБ-САЙТОВ // Бюллетень науки и практики. 2025. №1.
+                            URL: <a
+                                href="https://cyberleninka.ru/article/n/rol-iskusstvennogo-intellekta-v-sozdanii-veb-saytov"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/rol-iskusstvennogo-intellekta-v-sozdanii-veb-saytov</a>.
+                        </p>
+
+                        <p id="ref12" class="abstract-text">12. «Автоматизация тестирования ПО на основе ИИ: перспективы
+                            и ограничения» [Электронный ресурс] // статья Цикишева А. Д., Белов Ю. Ю. и др. – 2022. –
+                            URL: <a
+                                href="https://conference.kf.bmstu.ru/uploads/userfiles/tom1_sekciya_1_17_rinc_mgtu_14_12_22.pdf"
+                                target="_blank"
+                                class="academic-link">https://conference.kf.bmstu.ru/uploads/userfiles/tom1_sekciya_1_17_rinc_mgtu_14_12_22.pdf</a>.
+                        </p>
+
+                        <p id="ref13" class="abstract-text">13. Шиман Дмитрий Валентинович, Булова Юлия Олеговна
+                            Программное средство для исследования характеристик кодов, направленных на исправление
+                            ошибок типа «Стирание» // Труды БГТУ. Серия 3: Физико-математические науки и информатика.
+                            2014. №6 (170). URL: <a
+                                href="https://cyberleninka.ru/article/n/programmnoe-sredstvo-dlya-issledovaniya-harakteristik-kodov-napravlennyh-na-ispravlenie-oshibok-tipa-stiranie"
+                                target="_blank"
+                                class="academic-link">https://cyberleninka.ru/article/n/programmnoe-sredstvo-dlya-issledovaniya-harakteristik-kodov-napravlennyh-na-ispravlenie-oshibok-tipa-stiranie</a>.
+                        </p>
+
+                        <p id="ref14" class="abstract-text">14. Синяева, Э. В. Исследование использования нейронных
+                            сетей для автоматического определения и исправления ошибок в программном коде / Э. В.
+                            Синяева, А. В. Боднар // Донбасс будущего глазами молодых ученых : сборник материалов
+                            научно-технической конференции для студентов, аспирантов и молодых ученых, Донецк, 19 ноября
+                            2024 года. – Донецк: Донецкий национальный технический университет, 2024. – С. 275-279. –
+                            EDN FLGATE.
+                        </p>
+                        <p id="ref15" class="abstract-text">15. Раджабова, Ф. М. Алгоритмы обнаружения и исправления
+                            ошибок в программном коде / Ф. М. Раджабова // Актуальные вопросы современной экономики. –
+                            2025. – № 4. – С. 791-793. – EDN VOBVTY.
+                        </p>
+
+
+
+
                     </section>
                 </div>
             </main>
