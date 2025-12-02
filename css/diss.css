@@ -219,7 +219,7 @@ html {
 }
 
 .academic-link {
-    color: inherit; /* Наследует цвет текста */
+    color: #000000; /* Наследует цвет текста */
     text-decoration: none; /* Убираем подчеркивание */
     font-weight: normal; /* Обычное начертание */
     font-style: normal; /* Обычный шрифт */
