@@ -218,6 +218,20 @@ html {
     text-indent: 0;
 }
 
+.academic-link {
+    color: inherit; /* Наследует цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: normal; /* Обычное начертание */
+    font-style: normal; /* Обычный шрифт */
+    cursor: pointer; /* Курсор-указатель */
+}
+
+.academic-link:hover {
+    color: inherit; /* При наведении остается тот же цвет */
+    text-decoration: underline; /* Можно добавить подчеркивание при наведении */
+    text-decoration-color: #666; /* Серый цвет подчеркивания */
+}
+
 /* Стили для улучшения читаемости */
 .dissertation-content strong {
     color: #000000;
