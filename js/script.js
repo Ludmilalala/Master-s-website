@@ -1,182 +1,23 @@
 // Инициализация при загрузке документа
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     console.log('Сайт загружен!');
-
-    // Показываем обычный видеоплеер по умолчанию
-    const videoFallback = document.getElementById('video-fallback');
-    const animatedButton = document.getElementById('animated-video-button');
-
-    // Проверяем, загрузился ли GSAP
-    if (typeof TweenMax !== 'undefined' && typeof TimelineMax !== 'undefined') {
-        // GSAP загружен - скрываем fallback, показываем анимированную кнопку
-        if (videoFallback) videoFallback.style.display = 'none';
-        if (animatedButton) animatedButton.style.display = 'block';
-
-        // Инициализируем анимированную кнопку
-        initAnimatedVideoButton();
-    } else {
-        // GSAP не загрузился - оставляем стандартный видеоплеер
-        console.warn('GSAP не загрузился, используется стандартный видеоплеер');
-        if (animatedButton) animatedButton.style.display = 'none';
-        if (videoFallback) videoFallback.style.display = 'block';
-    }
-
+    
     // Инициализация модальных окон для изображений
     initImageModals();
-
+    
     // Инициализация плавной прокрутки
     initSmoothScrolling();
-
+    
     // Инициализация подсветки текущего раздела
     initCurrentSectionHighlight();
 });
 
-// Функция для инициализации анимированной видеокнопки
-function initAnimatedVideoButton() {
-    console.log('Инициализация анимированной видеокнопки...');
-
-    try {
-        TweenMax.set(".play-circle-01", {
-            rotation: 90,
-            transformOrigin: "center"
-        });
-
-        TweenMax.set(".play-circle-02", {
-            rotation: -90,
-            transformOrigin: "center"
-        });
-
-        TweenMax.set(".play-perspective", {
-            xPercent: 6.5,
-            scale: .175,
-            transformOrigin: "center",
-            perspective: 1
-        });
-
-        TweenMax.set(".play-video", {
-            visibility: "hidden",
-            opacity: 0,
-        });
-
-        TweenMax.set(".play-triangle", {
-            transformOrigin: "left center",
-            transformStyle: "preserve-3d",
-            rotationY: 10,
-            scaleX: 2
-        });
-
-        const rotateTL = new TimelineMax({ paused: true })
-            .to(".play-circle-01", .7, {
-                opacity: .1,
-                rotation: '+=360',
-                strokeDasharray: "456 456",
-                ease: Power1.easeInOut
-            }, 0)
-            .to(".play-circle-02", .7, {
-                opacity: .1,
-                rotation: '-=360',
-                strokeDasharray: "411 411",
-                ease: Power1.easeInOut
-            }, 0);
-
-        const openTL = new TimelineMax({ paused: true })
-            .to(".play-backdrop", 1, {
-                opacity: .95,
-                visibility: "visible",
-                ease: Power2.easeInOut
-            }, 0)
-            .to(".play-close", 1, {
-                opacity: 1,
-                ease: Power2.easeInOut
-            }, 0)
-            .to(".play-perspective", 1, {
-                xPercent: 0,
-                scale: 1,
-                ease: Power2.easeInOut
-            }, 0)
-            .to(".play-triangle", 1, {
-                scaleX: 1,
-                ease: ExpoScaleEase.config(2, 1, Power2.easeInOut)
-            }, 0)
-            .to(".play-triangle", 1, {
-                rotationY: 0,
-                ease: ExpoScaleEase.config(10, .01, Power2.easeInOut)
-            }, 0)
-            .to(".play-video", 1, {
-                visibility: "visible",
-                opacity: 1
-            }, .5);
-
-        const button = document.querySelector(".play-button");
-        const backdrop = document.querySelector(".play-backdrop");
-        const close = document.querySelector(".play-close");
-        const video = document.querySelector(".play-video video");
-
-        if (button) {
-            button.addEventListener("mouseover", () => rotateTL.play());
-            button.addEventListener("mouseleave", () => rotateTL.reverse());
-            button.addEventListener("click", () => {
-                openTL.play();
-                if (video) {
-                    video.play().catch(e => {
-                        console.error('Ошибка воспроизведения видео:', e);
-                        // Если видео не воспроизводится, показываем fallback
-                        openTL.reverse();
-                        showVideoFallback();
-                    });
-                }
-            });
-        }
-
-        if (backdrop) {
-            backdrop.addEventListener("click", () => {
-                openTL.reverse();
-                if (video) video.pause();
-            });
-        }
-
-        if (close) {
-            close.addEventListener("click", e => {
-                e.stopPropagation();
-                openTL.reverse();
-                if (video) video.pause();
-            });
-        }
-
-        // Закрытие по ESC
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                openTL.reverse();
-                if (video) video.pause();
-            }
-        });
-
-        console.log('Анимированная видеокнопка инициализирована');
-
-    } catch (error) {
-        console.error('Ошибка при инициализации анимированной кнопки:', error);
-        // В случае ошибки показываем стандартный видеоплеер
-        showVideoFallback();
-    }
-}
-
-// Функция для показа стандартного видеоплеера
-function showVideoFallback() {
-    const videoFallback = document.getElementById('video-fallback');
-    const animatedButton = document.getElementById('animated-video-button');
-
-    if (videoFallback && animatedButton) {
-        animatedButton.style.display = 'none';
-        videoFallback.style.display = 'block';
-    }
-}
-
 // Модальные окна для изображений
 function initImageModals() {
     const images = document.querySelectorAll('img[data-modal]');
-
+    
     images.forEach(img => {
-        img.addEventListener('click', function () {
+        img.addEventListener('click', function() {
             const modal = document.createElement('div');
             modal.style.cssText = `
                 position: fixed;
@@ -191,7 +32,7 @@ function initImageModals() {
                 z-index: 10000;
                 cursor: pointer;
             `;
-
+            
             const modalImg = document.createElement('img');
             modalImg.src = this.src;
             modalImg.style.cssText = `
@@ -200,11 +41,11 @@ function initImageModals() {
                 border-radius: 10px;
                 box-shadow: 0 0 30px rgba(0,0,0,0.5);
             `;
-
+            
             modal.appendChild(modalImg);
             document.body.appendChild(modal);
-
-            modal.addEventListener('click', function () {
+            
+            modal.addEventListener('click', function() {
                 document.body.removeChild(modal);
             });
         });
@@ -231,7 +72,7 @@ function initSmoothScrolling() {
 function initCurrentSectionHighlight() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.menu-button');
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -245,7 +86,7 @@ function initCurrentSectionHighlight() {
             }
         });
     }, { threshold: 0.5 });
-
+    
     sections.forEach(section => observer.observe(section));
 }
 
@@ -260,7 +101,7 @@ function copyEmail() {
 }
 
 // Анимация видеокнопки 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // Инициализация GSAP анимаций
     if (typeof TweenMax !== 'undefined') {
         TweenMax.set(".play-circle-01", {
@@ -364,14 +205,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Закрытие по ESC
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 openTL.reverse();
                 if (video) video.pause();
             }
         });
     }
-
-    
 });
 
