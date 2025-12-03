@@ -985,7 +985,7 @@ body {
 /* Добавьте в конец файла: */
 
 /* Стили для fallback видеоплеера */
-.video-fallback {
+/* .video-fallback {
     max-width: 600px;
     margin: 0 auto;
     border-radius: 10px;
@@ -997,4 +997,5 @@ body {
     width: 100%;
     height: auto;
     display: block;
-}
+} */
+
