@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Краткая характеристика нейронных сетей. Реализация расширяемой нейронной сети - Синяева Элеонора Витальевна
+    </title>
+    <link rel="stylesheet" href="../../css/master_style.css">
+    <link rel="stylesheet" href="../../css/article.css">
+    <link rel="stylesheet" href="../../css/diss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.39.0/tsparticles.min.js"></script>
+</head>
+
+<body>
+
+    <div id="tsparticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <!-- Верхний блок -->
+    <div class="top-block">
+        <div class="article-back-box">
+            <a href="../../science/index.html" class="article-back-link">← Назад к научным трудам</a>
+        </div>
+        <div class="university-links">
+            <a href="http://donntu.ru" target="_blank">ДонНТУ</a>
+            <a href="http://masters.donntu.ru" target="_blank" title="Перейти на портал магистров ДонНТУ">Портал
+                магистров</a>
+        </div>
+    </div>
+
+    <!-- Основное содержимое -->
+    <div class="container">
+        <div class="article-container">
+            <div class="article-content">
+                <div class="udk">УДК 004.032.26</div>
+
+                <div class="article-header">
+                    <div class="article-title">
+                        КРАТКАЯ ХАРАКТЕРИСТИКА НЕЙРОННЫХ СЕТЕЙ. РЕАЛИЗАЦИЯ РАСШИРЯЕМОЙ НЕЙРОННОЙ СЕТИ
+                    </div>
+
+                    <div class="authors">
+                        Боженко П.П.<sup>1</sup>, Стативко Р.У.<sup>1</sup>
+                    </div>
+
+                    <div class="university">
+                        Белгородский государственный технологический университет им. В.Г. Шухова (г. Белгород)
+                    </div>
+
+                    <div class="contact">
+                        <sup>1</sup> e-mail: Undeading@yandex.ru, stativko1@mail.ru
+                    </div>
+
+                    <div class="abstract">
+                        <p><strong>Боженко П.П., Стативко Р.У. Краткая характеристика нейронных сетей. Реализация
+                                расширяемой нейронной сети.</strong> В данной статье рассмотрено использование нейронных
+                            сетей, дана их краткая характеристика. Произведен анализ достоинств, а также существующих на
+                            данном этапе становления сложностей при обучении нейронных сетей на примере предметной
+                            области приема на работу. Рассмотрен и описан способ обучения нейронной сети методом
+                            обратного распространения ошибки. Выполнена понятная и последовательная реализация
+                            универсальной нейронной сети на языке программирования Java.</p>
+                        <p class="keywords"><strong>Ключевые слова:</strong> нейронные сети, программирование нейронных
+                            сетей, обучение нейронных сетей, метод обратного распространения ошибки, искусственный
+                            интеллект, технологии будущего</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Введение</div>
+                        <p>Внедрение искусственного интеллекта наблюдается в различных отраслях, таких как экономика,
+                            медицина и более прикладные области. Ведется большое количество разработок, например в
+                            Яндексе ведется разработка искусственного интеллекта (ИИ), который может управлять машиной
+                            вместо человека, причем испытания проводятся и в условиях города, где ИИ хорошо себя
+                            показывает. Возникающая шумиха вокруг искусственного интеллекта в настоящее время
+                            преувеличена, однако искусственный интеллект только начал проникать в нашу жизнь, и до конца
+                            не понятно, какими большими возможностями и перспективами обладает данная технология.</p>
+                        <p>В этой статье рассмотрены этапы создания и обучения нейронной сети методом обратного
+                            распространения ошибок. Также приведен анализ достоинств нейронных сетей и возможных
+                            проблем, например, возникающих при их работе в предметной области приема на работу.</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Краткая характеристика нейронных сетей</div>
+                        <p>Согласно данным издания Hightech, использование современных алгоритмов и чат-ботов позволяет
+                            многим предприятиям достаточно сильно сократить время, необходимое на подбор персонала.
+                            Исходя из данных отчета Global Recruiting Trends, который был разработан компанией LinkedIn,
+                            работодатели наиболее часто сталкиваются с такими проблемами как сильное разнообразие рынка
+                            труда и проведение эффективных собеседований. Для сокращения возможных проблем с поиском
+                            нужных сотрудников многие из этих компаний серьезно думают воспользоваться ИИ, в частности
+                            применяя нейронные сети.</p>
+                        <p>Несмотря на то, что НС имеют очень много преимуществ, они также не обделены недостатками,
+                            особенно на современном этапе их становления, со времени активного внедрения технологии
+                            прошло не так много времени. Так как НС представляет собой некоторую «черную коробку» на
+                            вход которой подаются данные, а на выходе получается результат, который невозможно точно
+                            определить, ведь он строится на результате ранее пройденных этапов обучения.</p>
+                        <p>Так же немаловажным является то, что при больших объемах данных, необходимых для адекватного
+                            обучения нейронной сети, сам процесс обучения и «выводы», возникающие у нейронной сети,
+                            контролировать становится очень затруднительно, а в некоторых случаях даже невозможно.</p>
+                        <p>Примером упомянутых выше тезисов является проблема, возникшая у НС Amazon, в результате
+                            которой НС, использующаяся при рассмотрении вакансий приема на работу, отдавала предпочтение
+                            мужчинам. Однако выяснили это специалисты Amazon не сразу, а после обнаружения данной
+                            проблемы быстро отстранили НС от работы. Очевидно, в проектирование системы данное поведение
+                            не вкладывали, оно образовалось как раз-таки при обучении системы. Причина, почему в
+                            процессе обучения НС сделала такие выводы, оказалась очень проста: в качестве обучения
+                            разработчики использовали базу реальных резюме соискателей, которые в результате всех
+                            собеседований были приняты на работу и эффективно справлялись с ней. Большая часть этих
+                            резюме было написано именно мужчинами, в результате чего и возник такой механизм у нейронной
+                            сети.</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Представление разработки нейронной сети</div>
+                        <p>Для того, чтобы понять, каким образом у НС происходит процесс обучения и работы, составлен
+                            пример построения двухслойной НС.</p>
+                        <p>Обозначение y1 = значение функции активации нейрона, которая может либо усиливать сигнал,
+                            либо наоборот ослаблять. F1 в свою очередь представляет функцию активации, есть множество
+                            разных видов функций, но выбор оптимальной не входит в задачи данной статьи. W(x) – вес
+                            связи нейрона, в начале задается случайными величинами обычно от -0,5 до 0,5.</p>
+                        <p>Обучением нейронной сети как раз является назначение правильных весов связи. Есть множество
+                            разных методов, но в данной статье для примера будет рассматриваться обучение методом
+                            обратного распространения ошибки.</p>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок1.png"
+                                alt="Рисунок 1 – Пример расчета функции активации нейронов 1-го слоя">
+                            <div class="figure-caption">Рисунок 1 – Пример расчета функции активации нейронов 1-го слоя
+                            </div>
+                        </div>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок2.png"
+                                alt="Рисунок 2 – Пример расчета функции активации нейронов 2-го слоя">
+                            <div class="figure-caption">Рисунок 2 – Пример расчета функции активации нейронов 2-го слоя
+                            </div>
+                        </div>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок3.png"
+                                alt="Рисунок 3 – Пример расчета функции активации нейронов выходного слоя">
+                            <div class="figure-caption">Рисунок 3 – Пример расчета функции активации нейронов выходного
+                                слоя</div>
+                        </div>
+
+                        <p>Стоит отметить, что функции активации для каждого слоя могут быть как одинаковыми, так и
+                            разными. Результатом работы нейронной сети является значение функции активации, которая в
+                            большинстве случаев имеет результат от 0 до 1. Соответственно если значение функции меньше
+                            0,5, то нейронная сеть решила, что ответ отрицательный, больше 0,5 – ответ положительный.
+                        </p>
+                        <p>После того как сеть получила результат, для ее обучения нужно вычислить вектор ошибки.
+                            Ошибкой является разница между эталонным значением и полученным нами.</p>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок4.png" alt="Рисунок 4 – Получение ошибки">
+                            <div class="figure-caption">Рисунок 4 – Получение ошибки</div>
+                        </div>
+
+                        <p>Далее ошибки для скрытых слоев вычисляются по следующему примеру.</p>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок5.png" alt="Рисунок 5 – Получение ошибки для 2-го слоя">
+                            <div class="figure-caption">Рисунок 5 – Получение ошибки для 2-го слоя</div>
+                        </div>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок6.png" alt="Рисунок 6 – Получение ошибки для 1-го слоя">
+                            <div class="figure-caption">Рисунок 6 – Получение ошибки для 1-го слоя</div>
+                        </div>
+
+                        <p>Новые веса входных сигналов назначаются следующим образом:</p>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок7.png"
+                                alt="Рисунок 7 – Вычисление новых значений весов">
+                            <div class="figure-caption">Рисунок 7 – Вычисление новых значений весов</div>
+                        </div>
+
+                        <p>Для промежуточных слоев выполняем изменение весов следующим образом:</p>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок8.png"
+                                alt="Рисунок 8 – Вычисление значений весов для промежуточных слоев">
+                            <div class="figure-caption">Рисунок 8 – Вычисление значений весов для промежуточных слоев
+                            </div>
+                        </div>
+
+                        <p>Символом η в данных формулах обозначается скорость обучения нашей нейронной сети. Если
+                            поставить η большим, то нейронная сеть быстро научиться распознавать легкие вопросы по типу
+                            тепло/холодно, но маленькие детали распознавать не сможет.</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Реализация нейронной сети на языке Java</div>
+                        <p>Рассмотрим пример создания нейронной сети на языке Java. Класс, отвечающий за нейрон:</p>
+
+                        <div class="code-block">
+                            <pre>
+class Neuron {
+    protected float inputWeight[]; // веса нейронов
+    protected float outputSignal; // выходной сигнал нейрона
+    protected float error; // ошибка нейрона для обучения
+    
+    Neuron(int size) // конструктор с параметром size- количество входов
+    {
+        inputWeigth = new float[size];
+        for(int i = 0; i < inputWeigth.length; i++) {
+            inputWeigth[i] = (float) ((-0.2) + (float) new Random().nextInt(40)/100.0);
+        }
+    }
+}
+                            </pre>
+                        </div>
+
+                        <p>Класс, отвечающий за слой нейронной сети:</p>
+
+                        <div class="code-block">
+                            <pre>
+class Layer {
+    protected ArrayList&lt;Neuron&gt; neurons = new ArrayList&lt;Neuron&gt;();
+    // массив нейронов
+}
+                            </pre>
+                        </div>
+
+                        <p>Класс, отвечающий за всю нейронную сеть:</p>
+
+                        <div class="code-block">
+                            <pre>
+public class NeuronNetwork {
+    protected ArrayList&lt;Layer&gt; layers = new ArrayList&lt;Layer&gt;();
+    private final float learnRate = (float) 0.05; // коэффициент обучаемости
+    
+    private float FunctionActivation(float summ) {
+        return (float) (1.0/(1.0 + Math.exp(-summ)));
+    } // функция активации
+    
+    public float FunctionActivationDx(double Summ) {
+        return (float) (Summ*(1-Summ));
+    } // производная от функции активации
+    
+    public void LearnNetwork(ArrayList&lt;int[]&gt; learnData, ArrayList&lt;Integer&gt; results) {
+        // Обучение нейронной сети
+        for (int i = 0; i < learnData.size(); i++) {
+            for (int j = 0; j < results.get(i).length; j++) {
+                for (;;) {
+                    result(learnData.get(i));
+                    LearnIteration(learnData.get(i), results.get(i)[j]);
+                    int layerCount = layers.size() - 1;
+                    if (Math.abs(layers.get(layerCount).neurons.get(0).error) < 0.1) {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    NeuronNetwork(int size, int neuronscount) {
+        // конструктор сети
+        Layer layer1 = new Layer();
+        for(int i = 0; i < neuronscount; i++) {
+            layer1.neurons.add(new Neuron(size));
+        }
+        layers.add(layer1);
+    }
+    
+    public void result(int[] input) {
+        // метод получения результата
+        for(int i = 0; i < layers.size(); i++) {
+            for(int j = 0; j < layers.get(i).neurons.size(); j++) {
+                if(i == 0) {
+                    float summ = 0;
+                    for(int k = 0; k < layers.get(i).neurons.get(j).inputWeight.length; k++) {
+                        summ += layers.get(i).neurons.get(j).inputWeight[k] * input[k];
+                    }
+                    layers.get(i).neurons.get(j).outputSignal = FunctionActivation(summ);
+                } else {
+                    float summ = 0;
+                    for(int k = 0; k < layers.get(i).neurons.get(j).inputWeight.length; k++) {
+                        summ += layers.get(i).neurons.get(j).inputWeight[k] * layers.get(i-1).neurons.get(k).outputSignal;
+                    }
+                    layers.get(i).neurons.get(j).outputSignal = FunctionActivation(summ);
+                }
+            }
+        }
+    }
+    
+    public void addLayer(int countNeurons) {
+        // добавление нового слоя
+        Layer layer1 = new Layer();
+        int size = layers.get(layers.size()-1).neurons.size();
+        for(int i = 0; i < countNeurons; i++) {
+            layer1.neurons.add(new Neuron(size));
+        }
+        layers.add(layer1);
+    }
+    
+    public void LearnIteration(int[] input, int result) {
+        // Одна итерация обучения нейрона
+        int layerCount = layers.size() - 1;
+        layers.get(layerCount).neurons.get(0).error = result - layers.get(layerCount).neurons.get(0).outputSignal;
+        
+        for(int i = layers.size() - 2; i >= 0; i--) {
+            for(int j = 0; j < layers.get(i).neurons.size(); j++) {
+                float error = 0;
+                for(int k = 0; k < layers.get(i+1).neurons.size(); k++) {
+                    error += layers.get(i+1).neurons.get(k).error * layers.get(i+1).neurons.get(k).inputWeight[j];
+                }
+                layers.get(i).neurons.get(j).error = error;
+            }
+        }
+        
+        for(int i = 0; i < layers.size(); i++) {
+            for(int j = 0; j < layers.get(i).neurons.size(); j++) {
+                if(i == 0) {
+                    for(int k = 0; k < layers.get(i).neurons.get(j).inputWeight.length; k++) {
+                        layers.get(i).neurons.get(j).inputWeight[k] += layers.get(i).neurons.get(j).error * 
+                            FunctionActivationDx(layers.get(i).neurons.get(j).outputSignal) * input[k] * learnRate;
+                    }
+                } else {
+                    for(int k = 0; k < layers.get(i).neurons.get(j).inputWeight.length; k++) {
+                        layers.get(i).neurons.get(j).inputWeight[k] += layers.get(i).neurons.get(j).error * 
+                            FunctionActivationDx(layers.get(i).neurons.get(j).outputSignal) * 
+                            layers.get(i-1).neurons.get(k).outputSignal * learnRate;
+                    }
+                }
+            }
+        }
+    }
+}
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Пример использования нейронной сети</div>
+                        <p>Данную нейронную сеть можно использовать в дальнейшем для своих задач. Код написан таким
+                            образом, что есть возможность строить свою топологию нейронной сети и в дальнейшем обучать
+                            ее.</p>
+                        <p>Пример обучения нейронной сети для решения задачи с использованием написанной выше нейронной
+                            сети. Задачей будет вывод, принимать ли человека на работу в компанию, или нет. Данная
+                            нейронная сеть является примером, поэтому на входах использует 5 входных параметров:</p>
+                        <ol>
+                            <li>Знает ли соискатель HTML</li>
+                            <li>Знает ли соискатель CSS</li>
+                            <li>Знает ли соискатель JavaScript</li>
+                            <li>Знает ли соискатель jQuery</li>
+                            <li>Умеет ли работать с Git</li>
+                        </ol>
+
+                        <div class="figure">
+                            <img src="../../img/Статья22_Рисунок9.png" alt="Рисунок 9 – Топология нейронной сети">
+                            <div class="figure-caption">Рисунок 9 – Топология нейронной сети</div>
+                        </div>
+
+                        <p>Обучающая выборка следующая, в нее заложена логика, что если соискатель не знает 2 из 3-х
+                            ключевых навыков (HTML, CSS, JavaScript), то он не подходит:</p>
+                        <ol>
+                            <li>HTML – 1, CSS – 1, JavaScript – 1, jQuery – 1, Git – 1. Результат работы сети 1.</li>
+                            <li>HTML – 0, CSS – 0, JavaScript – 0, jQuery – 0, Git – 0. Результат работы сети 0.</li>
+                            <li>HTML – 0, CSS – 0, JavaScript – 1, jQuery – 1, Git – 1. Результат работы сети 0.</li>
+                            <li>HTML – 1, CSS – 0, JavaScript – 1, jQuery – 1, Git – 1. Результат работы сети 1.</li>
+                            <li>HTML – 1, CSS – 1, JavaScript – 1, jQuery – 0, Git – 0. Результат работы сети 1.</li>
+                        </ol>
+
+                        <p>С помощью написанного выше класса была создана НС и результаты ее обучения получились
+                            следующими:</p>
+                        <ol>
+                            <li>HTML – 1, CSS – 1, JavaScript – 1, jQuery – 1, Git – 1. Результат нужен 1, получился
+                                0.9949747</li>
+                            <li>HTML – 0, CSS – 0, JavaScript – 0, jQuery – 0, Git – 0. Результат нужен 0, получился
+                                0.0044639213</li>
+                            <li>HTML – 0, CSS – 0, JavaScript – 1, jQuery – 1, Git – 1. Результат нужен 0, получился
+                                0.004430723</li>
+                            <li>HTML – 1, CSS – 0, JavaScript – 1, jQuery – 1, Git – 1. Результат нужен 1, получился
+                                0.9949963</li>
+                            <li>HTML – 1, CSS – 1, JavaScript – 1, jQuery – 0, Git – 0. Результат нужен 1, получился
+                                0.9949965</li>
+                        </ol>
+
+                        <p>На обучающей выборке нейронная сеть выдает требуемые нам результаты, однако есть еще
+                            результаты при работе с неизвестными ранее входными данными:</p>
+                        <ol start="6">
+                            <li>HTML – 0, CSS – 0, JavaScript – 1, jQuery – 1, Git – 1. Результат нужен 0, получился
+                                0.0415375</li>
+                            <li>HTML – 0, CSS – 1, JavaScript – 0, jQuery – 1, Git – 1. Результат нужен 0, получился
+                                0.0395445</li>
+                            <li>HTML – 1, CSS – 0, JavaScript – 0, jQuery – 1, Git – 1. Результат нужен 0, получился
+                                0.9444389</li>
+                        </ol>
+
+                        <p>Все результаты, кроме последнего, являются приемлемыми. Исходя из неверного результата можно
+                            предположить, что НС заложила в своё решение неверный вывод о том, что если соискатель
+                            обладает знаниями HTML, остальные знания не важны, что не соответствует нужной нам логике.
+                            Даже на примере простой НС видно, насколько важно продумать правильно топологию НС и в
+                            особенности обучающую выборку для того, чтобы НС вела себя так, как нужно разработчику.</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Заключение</div>
+                        <p>Подведя итог вышесказанному можно сделать вывод о том, что нейронные сети являются
+                            перспективной и новой технологией, однако в настоящее время имеют свои особенности и
+                            проблемы, которые в процессе разработки нужно учитывать.</p>
+                    </div>
+
+                    <div class="references" id="references">
+                        <div class="section-title">Список цитируемой литературы</div>
+                        <div class="reference-list">
+                            <div class="reference-item" id="ref1">1. Иду по приборам: Яндекс.Такси испытало беспилотный
+                                автомобиль [Электронный ресурс] Режим доступа:
+                                https://yandex.ru/blog/company/idu-po-priboram-yandeks-taksi-ispytalo-bespilotnyyavtomobil,
+                                свободный. (Дата обращения: 01.12.2018 г.)</div>
+                            <div class="reference-item" id="ref2">2. ИИ приходит на смену специалистам по найму
+                                персонала [Электронный ресурс] - Режим доступа:
+                                https://nightech.fm/2018/01/11/interview-with-a-robot/, свободный. (Дата обращения:
+                                01.12.2018 г.)</div>
+                            <div class="reference-item" id="ref3">3. Искусственный интеллект заменит специалистов по
+                                найму персонала [Электронный ресурс] Режим доступа:
+                                https://robo-sapiens.ru/novosti/iskusstvennyiy-intellekt-zamenit-spetsialistov-ponaymu-personala/,
+                                свободный. (Дата обращения: 01.12.2018 г.)</div>
+                            <div class="reference-item" id="ref4">4. Нейронные сети: основы теории / А. И. Галушкин. —
+                                М.: Горячая линия-Телеком, 2010. — 496 с.</div>
+                            <div class="reference-item" id="ref5">5. Galushkin, Alexander I. Neural network theory,
+                                Springer, 2007. — 402 рр.</div>
+                            <div class="reference-item" id="ref6">6. Сверточная нейронная сеть, часть 2: обучение
+                                алгоритмом обратного распространения ошибки [Электронный ресурс] - Режим доступа:
+                                https://habr.com/post/348028, свободный. (Дата обращения: 01.12.2018 г.)</div>
+                        </div>
+                    </div>
+
+                    <div class="abstract" style="margin-top: 40px;">
+                        <p><strong>Боженко П.П., Стативко Р.У. Краткая характеристика нейронных сетей. Реализация
+                                расширяемой нейронной сети.</strong> В данной статье рассмотрено использование нейронных
+                            сетей, дана их краткая характеристика. Произведен анализ достоинств, а также существующих на
+                            данном этапе становления сложностей при обучении нейронных сетей на примере предметной
+                            области приема на работу. Рассмотрен и описан способ обучения нейронной сети методом
+                            обратного распространения ошибки. Выполнена понятная и последовательная реализация
+                            универсальной нейронной сети на языке программирования Java. Показан пример использования
+                            написанной нейронной сети. Приведены и обоснованы результаты обучения написанной нейронной
+                            сети.</p>
+                        <p class="keywords"><strong>Ключевые слова:</strong> нейронные сети, программирование нейронных
+                            сетей, обучение нейронных сетей, метод обратного распространения ошибки, искусственный
+                            интеллект, технологии будущего</p>
+
+                        <p><strong>Bozhenko P.P., Stativko R.U. Brief characteristics of neural networks. Realization of
+                                the expandable neural network.</strong> In the article the use of neural networks is
+                            considered, their brief characteristic is given. The analysis of advantages, and also
+                            existing at this stage of formation of difficulties, at training of neural networks on the
+                            example of a subject area of employment is made. The method of neural network training by
+                            the method of error back propagation is considered and described. A clear and consistent
+                            implementation of the universal neural network in the java programming language is
+                            performed. An example of using a written neural network is shown. The results of training
+                            written neural network, in particular the degree of change of weights before and after
+                            training are given and justified.</p>
+                        <p class="keywords"><strong>Keywords:</strong> neural networks, programming of neural networks,
+                            training of neural networks, method of back propagation of errors, artificial intelligence,
+                            technologies of the future</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Нижнее меню -->
+    <footer class="footer-menu">
+        <a class="footer-item" href="../../index.html">Резюме</a>
+        <a class="footer-item" href="../../diss/index.html">Реферат</a>
+        <a class="footer-item" href="../../science/index.html">Научные труды</a>
+        <a class="footer-item" href="../../ind/index.html">Индивидуальный раздел</a>
+    </footer>
+
+    <script src="../../js/particles-config.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/script.js"></script>
+
+</body>
+
+</html>
