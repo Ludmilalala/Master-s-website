@@ -1,13 +1,13 @@
 // Инициализация при загрузке документа
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Сайт загружен!');
-    
+
     // Инициализация модальных окон для изображений
     initImageModals();
-    
+
     // Инициализация плавной прокрутки
     initSmoothScrolling();
-    
+
     // Инициализация подсветки текущего раздела
     initCurrentSectionHighlight();
 });
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Модальные окна для изображений
 function initImageModals() {
     const images = document.querySelectorAll('img[data-modal]');
-    
+
     images.forEach(img => {
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             const modal = document.createElement('div');
             modal.style.cssText = `
                 position: fixed;
@@ -32,7 +32,7 @@ function initImageModals() {
                 z-index: 10000;
                 cursor: pointer;
             `;
-            
+
             const modalImg = document.createElement('img');
             modalImg.src = this.src;
             modalImg.style.cssText = `
@@ -41,11 +41,11 @@ function initImageModals() {
                 border-radius: 10px;
                 box-shadow: 0 0 30px rgba(0,0,0,0.5);
             `;
-            
+
             modal.appendChild(modalImg);
             document.body.appendChild(modal);
-            
-            modal.addEventListener('click', function() {
+
+            modal.addEventListener('click', function () {
                 document.body.removeChild(modal);
             });
         });
@@ -72,7 +72,7 @@ function initSmoothScrolling() {
 function initCurrentSectionHighlight() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.menu-button');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -86,7 +86,7 @@ function initCurrentSectionHighlight() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     sections.forEach(section => observer.observe(section));
 }
 
@@ -101,7 +101,7 @@ function copyEmail() {
 }
 
 // Анимация видеокнопки 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Инициализация GSAP анимаций
     if (typeof TweenMax !== 'undefined') {
         TweenMax.set(".play-circle-01", {
@@ -179,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const backdrop = document.querySelector(".play-backdrop");
         const close = document.querySelector(".play-close");
         const video = document.querySelector(".play-video video");
+        const videoContainer = document.querySelector(".play-video");
 
         if (button) {
             button.addEventListener("mouseover", () => rotateTL.play());
@@ -204,8 +205,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        // Важное: добавляем обработчик для контейнера видео
+        if (videoContainer) {
+            videoContainer.addEventListener('click', function (e) {
+                e.stopPropagation(); // Предотвращаем закрытие при клике на видео
+            });
+        }
+
+
         // Закрытие по ESC
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 openTL.reverse();
                 if (video) video.pause();
