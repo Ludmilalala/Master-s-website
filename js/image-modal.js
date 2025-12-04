@@ -1,48 +1,78 @@
-// js/image-modal.js
-class ImageModal {
-    constructor() {
-        this.modal = null;
-        this.init();
-    }
-
-    init() {
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-image')) {
-                this.openModal(e.target.src, e.target.alt);
+// Функция для модальных окон изображений
+function initImageModalsForInd() {
+    // Находим все изображения в индивидуальном разделе
+    const images = document.querySelectorAll('.hobby-image, .profile-photo');
+    
+    images.forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Создаем модальное окно
+            const modal = document.createElement('div');
+            modal.className = 'image-modal';
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+            
+            const content = document.createElement('div');
+            content.className = 'modal-content';
+            
+            const modalImg = document.createElement('img');
+            modalImg.src = this.src;
+            modalImg.alt = this.alt || 'Изображение';
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'modal-close';
+            closeBtn.innerHTML = '&times;';
+            
+            // Собираем структуру
+            content.appendChild(modalImg);
+            content.appendChild(closeBtn);
+            modal.appendChild(overlay);
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+            
+            // Блокируем прокрутку фона
+            document.body.style.overflow = 'hidden';
+            
+            // Функции закрытия
+            function closeModal() {
+                document.body.removeChild(modal);
+                document.body.style.overflow = '';
             }
+            
+            overlay.addEventListener('click', closeModal);
+            closeBtn.addEventListener('click', closeModal);
+            
+            // Закрытие по ESC
+            function handleEsc(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    document.removeEventListener('keydown', handleEsc);
+                }
+            }
+            
+            document.addEventListener('keydown', handleEsc);
+            
+            // Закрытие при изменении ориентации на мобильных
+            window.addEventListener('orientationchange', closeModal);
         });
-    }
-
-    openModal(src, alt) {
-        this.modal = document.createElement('div');
-        this.modal.className = 'image-modal';
-        this.modal.innerHTML = `
-            <div class="modal-overlay"></div>
-            <div class="modal-content">
-                <img src="${src}" alt="${alt}">
-                <button class="modal-close">&times;</button>
-            </div>
-        `;
-
-        document.body.appendChild(this.modal);
-        this.addEventListeners();
-    }
-
-    addEventListeners() {
-        this.modal.querySelector('.modal-overlay').addEventListener('click', () => this.closeModal());
-        this.modal.querySelector('.modal-close').addEventListener('click', () => this.closeModal());
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') this.closeModal();
-        });
-    }
-
-    closeModal() {
-        if (this.modal) {
-            document.body.removeChild(this.modal);
-            this.modal = null;
-        }
-    }
+    });
 }
 
-// Автоматическая инициализация
-new ImageModal();
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+    initImageModalsForInd();
+    
+    // Также можно добавить лёгкую анимацию при наведении
+    const images = document.querySelectorAll('.hobby-image');
+    images.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            this.style.transform = 'rotate(-2deg) scale(1.02)';
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'rotate(-2deg) scale(1)';
+        });
+    });
+});
