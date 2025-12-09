@@ -26,6 +26,7 @@
 .article-back-box {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .article-back-link {
@@ -223,30 +224,7 @@
     text-indent: 1.5em;
 }
 
-.article-back-link {
-    display: block;
-     margin: 0;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background: #667eea;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    width: fit-content;
-    margin-left: 0; 
-}
 
-.article-back-link:hover {
-    background: #5a67d8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
 
 /* Списки для статей */
 .article-content ul,
@@ -490,5 +468,213 @@
     .article-back-link, .university-links a {
         padding: 5px 10px;
         font-size: 13px;
+    }
+}
+
+/* Стили для кнопки цитирования */
+.citation-btn {
+    padding: 10px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    min-height: 40px;
+    display: inline-block;
+    line-height: 1.4;
+    white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.citation-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Модальное окно цитирования */
+.citation-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.citation-modal-content {
+    background-color: white;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s;
+    overflow: hidden;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.citation-modal-header {
+    padding: 20px;
+    background: #667eea;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.citation-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.citation-close {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.citation-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.citation-modal-body {
+    padding: 25px;
+}
+
+.citation-text {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+}
+
+.citation-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.citation-copy-btn {
+    padding: 10px 25px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.citation-copy-btn:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+
+    .article-back-box {
+        gap: 10px; /* Уменьшаем отступ на мобильных */
+    }
+    .article-back-link, .citation-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    /* Для мобильных делаем кнопки более компактными */
+    .article-back-box {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .citation-btn {
+        margin-left: 10px;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .citation-modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .citation-modal-header h3 {
+        font-size: 16px;
+    }
+    
+    .citation-text {
+        font-size: 13px;
+        padding: 15px;
+    }
+    
+    .citation-copy-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .article-back-link, .citation-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    .article-back-box {
+        gap: 8px;
+    }
+    .citation-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    .citation-modal-body {
+        padding: 15px;
+    }
+    
+    .citation-modal-header {
+        padding: 15px;
     }
 }
