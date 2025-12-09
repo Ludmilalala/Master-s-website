@@ -19,9 +19,11 @@
     <!-- Верхний блок -->
     <div class="top-block">
         <div class="article-back-box">
-            <a href="../../science/index.html" class="article-back-link">← Назад к научным трудам</a>
+            <a href="../../science/index.html" class="article-back-link">← Назад</a>
+            <button class="citation-btn" id="citationBtn">Цитировать</button>
         </div>
         <div class="university-links">
+
             <a href="http://donntu.ru" target="_blank">ДонНТУ</a>
             <a href="http://masters.donntu.ru" target="_blank" title="Перейти на портал магистров ДонНТУ">Портал
                 магистров</a>
@@ -165,9 +167,29 @@
         <a class="footer-item" href="../../ind/index.html">Индивидуальный раздел</a>
     </footer>
 
+    <div id="citationModal" class="citation-modal">
+    <div class="citation-modal-content">
+        <div class="citation-modal-header">
+            <h3>Цитирование статьи</h3>
+            <span class="citation-close">&times;</span>
+        </div>
+        <div class="citation-modal-body">
+            <div class="citation-text">
+                Раджабова, Ф. М. Алгоритмы обнаружения и исправления ошибок в программном коде / Ф. М. Раджабова // Актуальные вопросы современной экономики. – 2025. – № 4. – С. 791-793. – EDN VOBVTY.
+            </div>
+            <div class="citation-actions">
+                <button class="citation-copy-btn" id="copyCitationBtn">
+                    <i class="far fa-copy"></i> Копировать
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="../../js/particles-config.js"></script>
     <script src="../../js/main.js"></script>
     <script src="../../js/script.js"></script>
+    <script src="../../js/citationModal.js"></script>
 
 </body>
 
